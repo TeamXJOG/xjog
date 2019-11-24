@@ -1,6 +1,6 @@
 @extends('main/nologin')
 
-@section('title', 'XJOG - Title')
+@section('title', 'XJOG - Beranda')
 @section('container')
   <!--================Hero Banner Area Start =================-->
   <section class="hero-banner magic-ball">
@@ -19,13 +19,13 @@
     </div>
   </section>
   <!--================Hero Banner Area End =================-->
-   <!--================Service Area Start =================-->
-   <a id="service" name="service"></a>
+   <!--================ Service Area Start =================-->
    <section class="section-margin generic-margin">
+   <a id="service" name="service"></a>
     <div class="container" >
       <div class="section-intro text-center pb-90px">
         <img class="section-intro-img" src="img/home/section-icon.png" alt="">
-        <h2>Our Popular Services</h2>
+        <h2>Rekomendasi Lokasi Wisata Favorit</h2>
         <p>Fowl have fruit moveth male they are that place you will lesser</p>
       </div>
 
@@ -36,13 +36,13 @@
               <img class="img-fluid" src="img/home/service1.png" alt="">
             </div>
             <div class="service-card-body">
-              <h3>Hotel Booking</h3>
-              <p>Great so dominion two seed give dry rule be fowl him female you will gathered creeping and created air</p>
+              <h3>Tugu Jogja</h3>
+              <p>Sebuah monumen yang dikenal sebagai simbol atau lambang kota Yogyakarta</p>
             </div>
           </div>
         </div>
 
-        <!-- ============ nanti pake foreach biat card nya dinamis ============== -->
+        <!-- nanti pake foreach biat card nya dinamis dan urut berdasarkan -->
         
         <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
           <div class="service-card text-center">
