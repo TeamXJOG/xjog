@@ -17,6 +17,17 @@
     <link rel="stylesheet" href="{{asset('Landing/vendors/nice-select/nice-select.css')}}">
 
     <link rel="stylesheet" href="{{asset('Landing/css/style.css')}}">
+
+
+    <script src="{{asset('Landing/vendors/jquery/jquery-3.2.1.min.js')}}"></script>
+    <script src="{{asset('Landing/vendors/bootstrap/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{asset('Landing/vendors/owl-carousel/owl.carousel.min.js')}}"></script>
+    <script src="{{asset('Landing/vendors/nice-select/jquery.nice-select.min.js')}}"></script>
+    <script src="{{asset('Landing/js/jquery.ajaxchimp.min.js')}}"></script>
+    <script src="{{asset('Landing/js/mail-script.js')}}"></script>
+    <script src="{{asset('Landing/js/skrollr.min.js')}}"></script>
+    <script src="{{asset('Landing/js/main.js')}}"></script>
+
 </head>
 <body>
 <!--================ Header Menu Area start =================-->
@@ -24,7 +35,7 @@
     <div class="main_menu">
       <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container box_1620">
-          <a class="navbar-brand logo_h" href="/"><img src="img/logo.png" alt=""></a>
+          <a class="navbar-brand logo_h" href="/"><img src="img/logo.png" alt="">XJOG</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -33,7 +44,7 @@
 
           <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
             <ul class="nav navbar-nav menu_nav justify-content-end">
-              <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li> 
+              <li class="nav-item active"><a class="nav-link" href="index.html">Beranda</a></li> 
               <li class="nav-item"><a class="nav-link" href="about.html">About</a></li> 
               <li class="nav-item"><a class="nav-link" href="package.html">Packages</a>
               <li class="nav-item submenu dropdown">
@@ -56,14 +67,16 @@
             </ul>
 
             <div class="nav-right text-center text-lg-right py-4 py-lg-0">
-              <a class="button" href="#">Get Started</a>
+                <a class="button" href="#">Sign In</a>
             </div>
           </div> 
         </div>
       </nav>
     </div>
   </header>
-@yield('container')
+  @yield('container')
 <!--================Header Menu Area =================-->
 </body>
+
+
 </html>

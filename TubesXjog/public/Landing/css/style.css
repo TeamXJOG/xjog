@@ -43,6 +43,8 @@ button:focus {
   box-shadow: none !important;
 }
 
+
+
 h1,
 h2,
 h3,
@@ -2518,6 +2520,10 @@ h3, .h3 {
   .button {
     padding: 12px 45px;
   }
+}
+
+.button:active {
+  transform: scale(0.7);
 }
 
 .button:hover {
