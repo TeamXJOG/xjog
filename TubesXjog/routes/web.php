@@ -15,4 +15,5 @@
 //     return view('beranda');
 // });
 
-Route::get('/','pagesController@home');
+Route::get('/','pagesController@beranda');
+Route::get('/galeri','pagesController@galeri');

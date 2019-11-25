@@ -44,8 +44,8 @@
 
           <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
             <ul class="nav navbar-nav menu_nav justify-content-end">
-              <li class="nav-item active"><a class="nav-link" href="index.html">Beranda</a></li> 
-              <li class="nav-item"><a class="nav-link" href="about.html">About</a></li> 
+              <li class="nav-item active"><a class="nav-link" href="/">Beranda</a></li> 
+              <li class="nav-item"><a class="nav-link" href="/galeri">Galeri</a></li> 
               <li class="nav-item"><a class="nav-link" href="package.html">Packages</a>
               <li class="nav-item submenu dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
