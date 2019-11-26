@@ -17,3 +17,5 @@
 
 Route::get('/','pagesController@beranda');
 Route::get('/galeri','pagesController@galeri');
+Route::get('/signin','pagesController@signin');
+Route::get('/signup','pagesController@signup');
