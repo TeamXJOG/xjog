@@ -39,26 +39,32 @@
 
 					<div class="wrap-input100 validate-input m-b-23" data-validate = "Nama depan harus diisi">
 						<span class="label-input100">Nama depan</span>
-						<input class="input100" type="text" name="firstname" placeholder="Masukan nama depan anda">
+						<input class="input100" type="text" name="firstname" placeholder="ketik nama depan anda">
 						<span class="focus-input100" data-symbol="&#xf206;"></span>
 					</div>
 
 					<div class="wrap-input100 m-b-23">
 						<span class="label-input100">Nama Belakang</span>
-						<input class="input100" type="text" name="lastname" placeholder="Masukan nama belakang anda">
+						<input class="input100" type="text" name="lastname" placeholder="ketik nama belakang anda">
 						<span class="focus-input100" data-symbol="&#xf206;"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input m-b-23" data-validate = "Email harus diisi">
 						<span class="label-input100">Email</span>
-						<input class="input100" type="text" name="email" placeholder="Masukan email anda">
-						<span class="focus-input100" data-symbol="&#xf0e0;"></span>
+						<input class="input100" type="text" name="email" placeholder="ketik email anda">
+						<span class="focus-input100" data-symbol="&#xf15a;"></span>
 					</div>
 
-					<div class="wrap-input100 validate-input" data-validate="Password is required">
-						<span class="label-input100">Password</span>
-						<input class="input100" type="password" name="pass" placeholder="Masukan password anda">
+					<div class="wrap-input100 validate-input m-b-23" data-validate="Kata sandi harus diisi">
+						<span class="label-input100">Kata Sandi</span>
+						<input class="input100" type="password" name="pass" placeholder="Ketik kata sandi anda">
 						<span class="focus-input100" data-symbol="&#xf190;"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate="Kata sandi harus diisi">
+						<span class="label-input100">Ulangi Password</span>
+						<input class="input100" type="password" name="pass" placeholder="ketik kata sandi anda lagi">
+						<span class="focus-input100" data-symbol="&#xf191;"></span>
 					</div>
 					<br>
 					<div class="container-login100-form-btn">
