@@ -2505,7 +2505,7 @@ h3, .h3 {
 /*=================== custom button rule start ====================*/
 .button {
   display: inline-block;
-  background-color: #6059f6;
+  background-color: #fc9403;
   color: #fff;
   border-radius: 30px;
   padding: 8px 25px;
@@ -2514,10 +2514,6 @@ h3, .h3 {
   -moz-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
-}
-
-.button .getsignup {
-  background-color: #fc9403;
 }
 
 @media (min-width: 600px) {

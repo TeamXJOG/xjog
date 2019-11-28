@@ -33,21 +33,43 @@
 		<div class="container-login100" style="background-image: url('{{asset('Login_v4/images/bg01.jpg')}}');">
 			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
 				<form class="login100-form validate-form">
-					<span class="login100-form-title p-b-49">
+					@csrf
+					<span class="login100-form-title p-b-49" method="POST" action="{{ route('login') }}">
 						Masuk
 					</span>
 
-					<div class="wrap-input100 validate-input m-b-23" data-validate = "Username is reauired">
-						<span class="label-input100">Username</span>
-						<input class="input100" type="text" name="username" placeholder="Ketik nama anda">
-						<span class="focus-input100" data-symbol="&#xf206;"></span>
-					</div>
-
-					<div class="wrap-input100 validate-input" data-validate="Password is required">
-						<span class="label-input100">Kata Sandi</span>
-						<input class="input100" type="password" name="pass" placeholder="Ketik kata sandi anda">
-						<span class="focus-input100" data-symbol="&#xf190;"></span>
-					</div>
+					<div class="wrap-input100 m-b-23">    
+                                <span class="label-input100">Email</span>
+                                <input id="email" type="email" class="input100 @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                <span class="focus-input100" data-symbol="&#xf206;"></span>
+                                @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        
+                            <div class="wrap-input100 validate-input m-b-23" data-validate="Password is required">
+                                <span class="label-input100">Kata Sandi</span>
+                                <input id="password" type="password" class="input100 @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                                <span class="focus-input100" data-symbol="&#xf190;"></span>
+                                @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+							</div>
+							
+							<div class="wrap-input100">
+                                <span class="label-input100">Kata Sandi</span>
+                                <input id="password" type="password" class="input100 @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                                <span class="focus-input100" data-symbol="&#xf190;"></span>
+                                @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
 					
 					<div class="text-right p-t-8 p-b-31">
 						<a href="#">

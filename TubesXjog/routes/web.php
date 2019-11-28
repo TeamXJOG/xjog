@@ -19,3 +19,7 @@ Route::get('/','pagesController@beranda');
 Route::get('/galeri','pagesController@galeri');
 Route::get('/signin','pagesController@signin');
 Route::get('/signup','pagesController@signup');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

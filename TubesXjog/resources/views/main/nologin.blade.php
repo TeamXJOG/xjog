@@ -67,7 +67,7 @@
             </ul>
 
             <div class="nav-right text-center text-lg-right py-4 py-lg-0">
-                <a class="button getsignup" href="/signin">Sign In</a>
+                <a class="button" href="/home">Sign In</a>
             </div>
           </div> 
         </div>
