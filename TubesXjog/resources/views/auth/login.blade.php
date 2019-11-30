@@ -69,7 +69,17 @@
 <div class="limiter">
 		<div class="container-login100" style="background-image: url('{{asset('Login_v4/images/bg01.jpg')}}');">
 			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
-				<form class="login100-form validate-form">
+                @if(\Session::has('alert'))
+                    <div class="alert alert-danger">
+                        <div>{{Session::get('alert')}}</div>
+                    </div>
+                @endif
+                @if(\Session::has('alert-success'))
+                    <div class="alert alert-success">
+                        <div>{{Session::get('alert-success')}}</div>
+                    </div>
+                @endif
+				<form class="login100-form validate-form" action="{{ url('/signincek')}}" method="post">
 					@csrf
 					<span class="login100-form-title p-b-49" method="POST" action="{{ route('login') }}">
 						Masuk

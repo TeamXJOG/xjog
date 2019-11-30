@@ -15,11 +15,11 @@ class pagesController extends Controller
     }
 
     Public function signin() {
-        return view('signin');
+        return view('auth/login');
     }
 
     Public function signup() {
-        return view('signup');
+        return view('auth/register');
     }
 }
     

@@ -23,3 +23,7 @@ Route::get('/signup','pagesController@signup');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/index_user','UserController@index');
+Route::get('/signout','UserController@logout');
+Route::post('/signincek','UserController@logincheck');
+Route::post('/registercek','UserController@registercheck');

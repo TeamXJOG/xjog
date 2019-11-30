@@ -67,7 +67,7 @@
             </ul>
 
             <div class="nav-right text-center text-lg-right py-4 py-lg-0">
-                <a class="button getsignup" href="#">Nama</a>
+                <a class="button" href="/signout">Log out</a>
             </div>
           </div> 
         </div>

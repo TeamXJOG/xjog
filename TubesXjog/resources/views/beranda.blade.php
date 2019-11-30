@@ -1,4 +1,5 @@
-@extends('main/nologin')
+@extends(\Session::has('cek') ? 'main/wlogin' : 'main/nologin');
+
 
 @section('title', 'XJOG - Beranda')
 @section('container')
