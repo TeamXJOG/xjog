@@ -5,28 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title')</title>
-    <link rel="icon" href="img/Fevicon.png" type="image/png">
+  
 
-    <link rel="stylesheet" href="{{asset('Landing/vendors/bootstrap/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{asset('Landing/vendors/fontawesome/css/all.min.css')}}">
-    <link rel="stylesheet" href="{{asset('Landing/vendors/themify-icons/themify-icons.css')}}">
-    <link rel="stylesheet" href="{{asset('Landing/vendors/linericon/style.css')}}">
-    <link rel="stylesheet" href="{{asset('Landing/vendors/owl-carousel/owl.theme.default.min.css')}}">
-    <link rel="stylesheet" href="{{asset('Landing/vendors/owl-carousel/owl.carousel.min.css')}}">
-    <link rel="stylesheet" href="{{asset('Landing/vendors/flat-icon/font/flaticon.css')}}">
-    <link rel="stylesheet" href="{{asset('Landing/vendors/nice-select/nice-select.css')}}">
+<script>
+    // Get the container element
+  var btnContainer = document.getElementById("myDIV");
 
-    <link rel="stylesheet" href="{{asset('Landing/css/style.css')}}">
+  // Get all buttons with class="btn" inside the container
+  var btns = btnContainer.getElementsByClassName("nav-item");
 
-
-    <script src="{{asset('Landing/vendors/jquery/jquery-3.2.1.min.js')}}"></script>
-    <script src="{{asset('Landing/vendors/bootstrap/bootstrap.bundle.min.js')}}"></script>
-    <script src="{{asset('Landing/vendors/owl-carousel/owl.carousel.min.js')}}"></script>
-    <script src="{{asset('Landing/vendors/nice-select/jquery.nice-select.min.js')}}"></script>
-    <script src="{{asset('Landing/js/jquery.ajaxchimp.min.js')}}"></script>
-    <script src="{{asset('Landing/js/mail-script.js')}}"></script>
-    <script src="{{asset('Landing/js/skrollr.min.js')}}"></script>
-    <script src="{{asset('Landing/js/main.js')}}"></script>
+  // Loop through the buttons and add the active class to the current/clicked button
+  for (var i = 0; i < btns.length; i++) {
+    btns[i].addEventListener("click", function() {
+      var current = document.getElementsByClassName("nav-item active");
+      current[0].className = current[0].className.replace("nav-item active", "nav-item");
+      this.className += "nav-item active";
+    });
+  }
+</script>
 
 </head>
 <body>
@@ -43,11 +39,11 @@
           </button>
 
           <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
-            <ul class="nav navbar-nav menu_nav justify-content-end">
+            <ul class="nav navbar-nav menu_nav justify-content-end" id="myDIV">
               <li class="nav-item active"><a class="nav-link" href="/">Beranda</a></li> 
               <li class="nav-item"><a class="nav-link" href="/galeri">Galeri</a></li> 
-              <li class="nav-item"><a class="nav-link" href="package.html">Packages</a>
-              <li class="nav-item submenu dropdown">
+              <li class="nav-item"><a class="nav-link" href="package.html">Tentang Kami</a>
+              <!-- <li class="nav-item submenu dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                   aria-expanded="false">Pages</a>
                 <ul class="dropdown-menu">
@@ -63,7 +59,7 @@
                   <li class="nav-item"><a class="nav-link" href="blog-details.html">Blog Details</a></li>
                 </ul>
 							</li>
-              <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+              <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li> -->
             </ul>
 
             <div class="nav-right text-center text-lg-right py-4 py-lg-0">

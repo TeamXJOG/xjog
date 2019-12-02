@@ -3,14 +3,36 @@
 
 @section('title', 'XJOG - Beranda')
 @section('container')
+<link rel="icon" href="img/Fevicon.png" type="image/png">
+
+    <link rel="stylesheet" href="{{asset('Landing/vendors/bootstrap/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('Landing/vendors/fontawesome/css/all.min.css')}}">
+    <link rel="stylesheet" href="{{asset('Landing/vendors/themify-icons/themify-icons.css')}}">
+    <link rel="stylesheet" href="{{asset('Landing/vendors/linericon/style.css')}}">
+    <link rel="stylesheet" href="{{asset('Landing/vendors/owl-carousel/owl.theme.default.min.css')}}">
+    <link rel="stylesheet" href="{{asset('Landing/vendors/owl-carousel/owl.carousel.min.css')}}">
+    <link rel="stylesheet" href="{{asset('Landing/vendors/flat-icon/font/flaticon.css')}}">
+    <link rel="stylesheet" href="{{asset('Landing/vendors/nice-select/nice-select.css')}}">
+
+    <link rel="stylesheet" href="{{asset('Landing/css/style.css')}}">
+
+
+    <script src="{{asset('Landing/vendors/jquery/jquery-3.2.1.min.js')}}"></script>
+    <script src="{{asset('Landing/vendors/bootstrap/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{asset('Landing/vendors/owl-carousel/owl.carousel.min.js')}}"></script>
+    <script src="{{asset('Landing/vendors/nice-select/jquery.nice-select.min.js')}}"></script>
+    <script src="{{asset('Landing/js/jquery.ajaxchimp.min.js')}}"></script>
+    <script src="{{asset('Landing/js/mail-script.js')}}"></script>
+    <script src="{{asset('Landing/js/skrollr.min.js')}}"></script>
+    <script src="{{asset('Landing/js/main.js')}}"></script>
   <!--================Hero Banner Area Start =================-->
   <section class="hero-banner magic-ball">
     <div class="container">
 
       <div class="row align-items-center text-center text-md-left">
         <div class="col-md-6 col-lg-5 mb-5 mb-md-0">
-          <h1>Explore Jogja at Its Fittest</h1>
-          <p>(here lies kata2 mutiara yo)</p>
+          <h1>Explore Jogja at Its Finest</h1>
+          <p></p>
           <a class="button button-hero mt-4" href="#service">Get Started</a>
         </div>
         <div class="col-md-6 col-lg-7 col-xl-6 offset-xl-1">

@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 class pagesController extends Controller
 {
     Public function beranda() {
+        // if(Session::get('login')) {
+        //     return redirect('/')->with('cek','masuk');
+        // }else {
+        //     return redirect('/');
+        // }
         return view('beranda');
     }
 
