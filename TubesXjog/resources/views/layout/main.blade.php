@@ -60,7 +60,7 @@
                                     <li><a href="{{ url('/galeri')}}">Gallery</a></li>
                                     <li><a href="{{ url('/')}}">About</a></li>
                                     <li><a href="{{ url('/')}}">Settings</a></li>
-                                    <li><a href="{{ url('/')}}">Login</a></li>
+                                    <li><a href="{{ url('/signin')}}">Login</a></li>
                                 </ul>
 
                                 <!-- Search Icon -->
