@@ -11,19 +11,30 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('beranda');
-// });
+
+
+
+Route::get('/about', function () {
+    return view('about');
+});
+
+Route::get('/settings', function () {
+    return view('settings');
+});
+
+
+Route::get('/login', function () {
+    return view('login');
+});
+
+
+
 
 Route::get('/','pagesController@beranda');
 Route::get('/galeri','pagesController@galeri');
 Route::get('/signin','pagesController@signin');
 Route::get('/signup','pagesController@signup');
+Route::get('/event','eventController@upload');
+Route::post('/event/proses','eventController@upload_proses');
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/index_user','UserController@index');
-Route::get('/signout','UserController@logout');
-Route::post('/signincek','UserController@logincheck');
-Route::post('/registercek','UserController@registercheck');

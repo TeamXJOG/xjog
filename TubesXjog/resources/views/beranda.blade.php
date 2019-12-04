@@ -1,115 +1,87 @@
-@extends(\Session::has('cek') ? 'main/wlogin' : 'main/nologin');
+@extends('layout.main')
+@section('title', 'Home Xjog')
 
-
-@section('title', 'XJOG - Beranda')
 @section('container')
-<link rel="icon" href="img/Fevicon.png" type="image/png">
 
-    <link rel="stylesheet" href="{{asset('Landing/vendors/bootstrap/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{asset('Landing/vendors/fontawesome/css/all.min.css')}}">
-    <link rel="stylesheet" href="{{asset('Landing/vendors/themify-icons/themify-icons.css')}}">
-    <link rel="stylesheet" href="{{asset('Landing/vendors/linericon/style.css')}}">
-    <link rel="stylesheet" href="{{asset('Landing/vendors/owl-carousel/owl.theme.default.min.css')}}">
-    <link rel="stylesheet" href="{{asset('Landing/vendors/owl-carousel/owl.carousel.min.css')}}">
-    <link rel="stylesheet" href="{{asset('Landing/vendors/flat-icon/font/flaticon.css')}}">
-    <link rel="stylesheet" href="{{asset('Landing/vendors/nice-select/nice-select.css')}}">
+    <!-- Welcome Area Start -->
+    <section class="welcome-area">
+        <div class="welcome-slides owl-carousel">
+            <!-- Single Slide -->
+            <div class="single-welcome-slide bg-img bg-overlay" style="background-image: url({{asset('Landing/alime/img/bg-img/yogya2.jpg')}});">
+                <div class="container h-100">
+                    <div class="row h-100 align-items-center">
+                        <!-- Welcome Text -->
+                        <div class="col-12 col-lg-8 col-xl-6">
+                            <div class="welcome-text">
+                                <h2 data-animation="bounceInUp" data-delay="100ms">Jalan <br>Malioboro</h2>
+                                <p data-animation="bounceInUp" data-delay="500ms">Jalan Malioboro adalah salah satu kawasan jalan dari tiga jalan di Kota Yogyakarta yang membentang dari Tugu Yogyakarta hingga ke perempatan Kantor Pos Yogyakarta. Malioboro terkenal sebagai surganya oleh-oleh.</p>
+                                <div class="hero-btn-group" data-animation="bounceInUp" data-delay="900ms">
+                                    <a href="#down" class="btn alime-btn mb-3 mb-sm-0 mr-4" >Ikut Kontes</a>
+                                    <a class="hero-mail-contact" href="mailto:hello.alime@gmail.com">Detail Kontes</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-    <link rel="stylesheet" href="{{asset('Landing/css/style.css')}}">
-
-
-    <script src="{{asset('Landing/vendors/jquery/jquery-3.2.1.min.js')}}"></script>
-    <script src="{{asset('Landing/vendors/bootstrap/bootstrap.bundle.min.js')}}"></script>
-    <script src="{{asset('Landing/vendors/owl-carousel/owl.carousel.min.js')}}"></script>
-    <script src="{{asset('Landing/vendors/nice-select/jquery.nice-select.min.js')}}"></script>
-    <script src="{{asset('Landing/js/jquery.ajaxchimp.min.js')}}"></script>
-    <script src="{{asset('Landing/js/mail-script.js')}}"></script>
-    <script src="{{asset('Landing/js/skrollr.min.js')}}"></script>
-    <script src="{{asset('Landing/js/main.js')}}"></script>
-  <!--================Hero Banner Area Start =================-->
-  <section class="hero-banner magic-ball">
-    <div class="container">
-
-      <div class="row align-items-center text-center text-md-left">
-        <div class="col-md-6 col-lg-5 mb-5 mb-md-0">
-          <h1>Explore Jogja at Its Finest</h1>
-          <p></p>
-          <a class="button button-hero mt-4" href="#service">Get Started</a>
+            <!-- Single Slide -->
+            <div class="single-welcome-slide bg-img bg-overlay" style="background-image: url({{asset('Landing/alime/img/bg-img/yogya3.jpg')}});">
+                <div class="container h-100">
+                    <div class="row h-100 align-items-center">
+                        <!-- Welcome Text -->
+                        <div class="col-12 col-lg-8 col-xl-6">
+                            <div class="welcome-text">
+                                <h2 data-animation="bounceInUp" data-delay="100ms">Candi <br>Prambanan</h2>
+                                <p data-animation="bounceInUp" data-delay="500ms">Candi Prambanan adalah sebuah kompleks candi Hindu yang merupakan ikon Kota Yogyakarta yang menjadi tujuan utama oleh para wisatawan baik lokal maupun domestik.</p>
+                                <div class="hero-btn-group" data-animation="bounceInUp" data-delay="900ms">
+                                    <a href="#" class="btn alime-btn mb-3 mb-sm-0 mr-4">Ikut Kontes</a>
+                                    <a class="hero-mail-contact" href="mailto:hello.alime@gmail.com">Detail Kontes</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="col-md-6 col-lg-7 col-xl-6 offset-xl-1">
-          <img class="img-fluid" src="{{asset('Landing/img/peta.png')}}" alt="">
-        </div>
-      </div>
-    </div>
-  </section>
-  <!--================Hero Banner Area End =================-->
-   <!--================ Service Area Start =================-->
-   <section class="section-margin generic-margin">
-   <a id="service" name="service"></a>
-    <div class="container" >
-      <div class="section-intro text-center pb-90px">
-        <img class="section-intro-img" src="img/home/section-icon.png" alt="">
-        <h2>Rekomendasi Lokasi Wisata Favorit</h2>
-        <p>Fowl have fruit moveth male they are that place you will lesser</p>
-      </div>
+    </section>
+    <!-- Welcome Area End -->
 
-      <div class="row">
-        <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
-          <div class="service-card text-center">
-            <div class="service-card-img">
-              <img class="img-fluid" src="{{asset('Landing/img/tugu.png')}}" alt="">
-            </div>
-            <div class="service-card-body">
-              <h3>Tugu Jogja</h3>
-              <p>Sebuah monumen yang dikenal sebagai simbol atau lambang kota Yogyakarta</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- nanti pake foreach biat card nya dinamis dan urut berdasarkan -->
-        
-        <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
-          <div class="service-card text-center">
-            <div class="service-card-img">
-              <img class="img-fluid" src="img/home/service2.png" alt="">
-            </div>
-            <div class="service-card-body">
-              <h3>Flight Booking</h3>
-              <p>Great so dominion two seed give dry rule be fowl him female you will gathered creeping and created air</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
-          <div class="service-card text-center">
-            <div class="service-card-img">
-              <img class="img-fluid" src="img/home/service3.png" alt="">
-            </div>
-            <div class="service-card-body">
-              <h3>Destination Booking</h3>
-              <p>Great so dominion two seed give dry rule be fowl him female you will gathered creeping and created air</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!--================Service Area End =================-->
   
-    <!--================About Area Start =================-->
-    <section class="bg-gray section-padding magic-ball magic-ball-about">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-7 col-md-6 mb-4 mb-md-0">
-          <div class="about-img">
-            <img class="img-fluid" src="{{asset('Landing/img/tugu.png')}}" alt="">
-          </div>
+
+    <!-- Footer Area Start -->
+    <footer class="footer-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="footer-content d-flex align-items-center justify-content-between">
+                        <!-- Copywrite Text -->
+                        <div class="copywrite-text">
+                            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                        </div>
+                        <!-- Footer Logo -->
+                        <div class="footer-logo">
+                            <a href="#"><img src="img/core-img/logo2.png" alt=""></a>
+                        </div>
+                        <!-- Social Info -->
+                        <div class="social-info">
+                            <a href="#"><i class="ti-facebook" aria-hidden="true"></i></a>
+                            <a href="#"><i class="ti-twitter-alt" aria-hidden="true"></i></a>
+                            <a href="#"><i class="ti-linkedin" aria-hidden="true"></i></a>
+                            <a href="#"><i class="ti-pinterest" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="col-lg-5 col-md-6 align-self-center about-content">
-          <h2>Exploration is <br class="d-none d-xl-block"> really the essence <br class="d-none d-xl-block"> of the human spirit</h2>
-          <p>Make she'd moved divided air. Whose tree that replenish tone hath own upon them it multiply was blessed is lights make gathering so day dominion so creeping air was made.</p>
-          <a class="button" href="#">Learn More</a>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!--================About Area End =================-->
+    </footer>
+    <!-- Footer Area End -->
+
+
+</body>
+
+</html>
+
 @endsection

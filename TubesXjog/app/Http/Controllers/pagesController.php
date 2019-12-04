@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class pagesController extends Controller
 {
@@ -12,6 +13,9 @@ class pagesController extends Controller
         // }else {
         //     return redirect('/');
         // }
+
+        
+
         return view('beranda');
     }
 
