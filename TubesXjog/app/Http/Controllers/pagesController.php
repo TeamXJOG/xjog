@@ -30,5 +30,9 @@ class pagesController extends Controller
     Public function signup() {
         return view('auth/register');
     }
+
+    public function editprofile() {
+        return view('user/profile');
+    }
 }
     

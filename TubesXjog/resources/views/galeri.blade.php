@@ -1,4 +1,4 @@
-@extends('layout.main')
+@extends(\Session::get('login') ? 'layout.main2' : 'layout.main')
 @section('title', 'Home Xjog')
 
 @section('container')

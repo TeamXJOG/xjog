@@ -1,6 +1,6 @@
-@extends('layout.main')
-@section('title', 'Home Xjog')
 
+@extends(\Session::get('login') ? 'layout.main2' : 'layout.main')
+@section('title', 'Home Xjog')
 @section('container')
 
     <!-- Welcome Area Start -->

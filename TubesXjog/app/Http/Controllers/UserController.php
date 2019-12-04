@@ -11,7 +11,7 @@ class UserController extends Controller
 {
     public function index() {
         if(Session::get('login')) {
-            return redirect('/')->with('cek','masuk');
+            return redirect('/');
         }else {
             return redirect('signin')->with('alert','harus login gan!');
         }
@@ -26,6 +26,7 @@ class UserController extends Controller
             if(Hash::check($password, $user->password)) {
                 Session::put('name',$user->name);
                 Session::put('email',$user->email);
+                Session::put('id',$user->id);
                 Session::put('login',TRUE);
                 return redirect('index_user');
             }
@@ -39,6 +40,30 @@ class UserController extends Controller
 
     public function logout() {
         Session::flush();
+        return redirect('/');
+    }
+
+    public function editprof(Request $request) {
+        // dd(Session::get('id'));
+        $profil = array (
+            'name' => $request->name,
+            'email' => $request->email  
+    );  
+        UserModel::findOrfail(Session::get('id'))->update($profil);
+
+        Session::forget(['name','email']);
+
+        Session::put('name',$request->name);
+        Session::put('email',$request->email);
+
+        return redirect('/');
+    }
+
+    public function hapusakun() {
+        UserModel::destroy(Session::get('id'));
+
+        Session::flush();
+
         return redirect('/');
     }
 
