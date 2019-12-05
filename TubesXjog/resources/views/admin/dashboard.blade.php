@@ -75,8 +75,8 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="chart.html">
-                                <i class="fas fa-chart-bar"></i>Charts</a>
+                            <a href="/event">
+                                <i class="fas fa-chart-bar"></i>Event</a>
                         </li>
                         <li>
                             <a href="table.html">
@@ -158,7 +158,7 @@
         <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo">
                 <a href="#">
-                    <img src="images/icon/logo.png" alt="Cool Admin" />
+                    <img src="{{asset('Landing/alime/img/core-img/xjoglogo.png')}}" alt="" />
                 </a>
             </div>
             <div class="menu-sidebar__content js-scrollbar1">
@@ -183,8 +183,8 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="chart.html">
-                                <i class="fas fa-chart-bar"></i>Charts</a>
+                            <a href="/event">
+                                <i class="fas fa-chart-bar"></i>Event</a>
                         </li>
                         <li>
                             <a href="table.html">

@@ -49,7 +49,7 @@ Route::post('/editprof','UserController@editprof');
 
 Route::post('/hapusakun','UserController@hapusakun');
 
-Route::get('/event','eventController@upload');
+Route::get('/event','pagesController@upload');
 Route::post('/event/proses','eventController@upload_proses');
 
 Auth::routes();

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session; 
 
 class pagesController extends Controller
 {
@@ -39,9 +40,13 @@ class pagesController extends Controller
         if(Session::get('role') == 'admin') {
             return view('admin/dashboard');
         }else {
-            return view('/');
+            return redirect('/');
         }
         
+    }
+
+    public function upload() {
+        return view('admin/upload');
     }
 }
     
