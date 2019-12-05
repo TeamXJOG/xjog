@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session; 
+use App\event;
 
 class pagesController extends Controller
 {
@@ -15,9 +16,9 @@ class pagesController extends Controller
         //     return redirect('/');
         // }
 
-        
+        $event = event::get();
 
-        return view('beranda');
+        return view('beranda', ['event' => $event]);
     }
 
     Public function galeri() {

@@ -6,15 +6,17 @@
     <!-- Welcome Area Start -->
     <section class="welcome-area">
         <div class="welcome-slides owl-carousel">
+
+            @foreach($event as $e)
             <!-- Single Slide -->
-            <div class="single-welcome-slide bg-img bg-overlay" style="background-image: url({{asset('Landing/alime/img/bg-img/yogya2.jpg')}});">
+            <div class="single-welcome-slide bg-img bg-overlay" style="background-image: url({{asset('data_file/'.$e->gambarObjekwisata)}});">
                 <div class="container h-100">
                     <div class="row h-100 align-items-center">
                         <!-- Welcome Text -->
                         <div class="col-12 col-lg-8 col-xl-6">
                             <div class="welcome-text">
-                                <h2 data-animation="bounceInUp" data-delay="100ms">Jalan <br>Malioboro</h2>
-                                <p data-animation="bounceInUp" data-delay="500ms">Jalan Malioboro adalah salah satu kawasan jalan dari tiga jalan di Kota Yogyakarta yang membentang dari Tugu Yogyakarta hingga ke perempatan Kantor Pos Yogyakarta. Malioboro terkenal sebagai surganya oleh-oleh.</p>
+                                <h2 data-animation="bounceInUp" data-delay="100ms">{{ $e->namaObjekwisata }}</h2>
+                                <p data-animation="bounceInUp" data-delay="500ms">{{ $e->deskripsiObjekwisata }}</p>
                                 <div class="hero-btn-group" data-animation="bounceInUp" data-delay="900ms">
                                     <a href="#down" class="btn alime-btn mb-3 mb-sm-0 mr-4" >Ikut Kontes</a>
                                     <a class="hero-mail-contact" href="mailto:hello.alime@gmail.com">Detail Kontes</a>
@@ -24,13 +26,14 @@
                     </div>
                 </div>
             </div>
+            @endforeach
 
             <!-- Single Slide -->
-            <div class="single-welcome-slide bg-img bg-overlay" style="background-image: url({{asset('Landing/alime/img/bg-img/yogya3.jpg')}});">
+            <!-- <div class="single-welcome-slide bg-img bg-overlay" style="background-image: url({{asset('Landing/alime/img/bg-img/yogya3.jpg')}});">
                 <div class="container h-100">
                     <div class="row h-100 align-items-center">
-                        <!-- Welcome Text -->
-                        <div class="col-12 col-lg-8 col-xl-6">
+                        Welcome Text -->
+                        <!-- <div class="col-12 col-lg-8 col-xl-6">
                             <div class="welcome-text">
                                 <h2 data-animation="bounceInUp" data-delay="100ms">Candi <br>Prambanan</h2>
                                 <p data-animation="bounceInUp" data-delay="500ms">Candi Prambanan adalah sebuah kompleks candi Hindu yang merupakan ikon Kota Yogyakarta yang menjadi tujuan utama oleh para wisatawan baik lokal maupun domestik.</p>
@@ -42,7 +45,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
+            
         </div>
     </section>
     <!-- Welcome Area End -->

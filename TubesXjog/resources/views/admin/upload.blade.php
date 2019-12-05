@@ -24,13 +24,18 @@
 					{{ csrf_field() }}
 
 					<div class="form-group">
+						<b>Nama Objek Wisata</b><br/>
+						<input type="text" name="nama">
+					</div>
+
+					<div class="form-group">
 						<b>File Gambar</b><br/>
 						<input type="file" name="file">
 					</div>
 
 					<div class="form-group">
-						<b>Keterangan</b>
-						<textarea class="form-control" name="keterangan"></textarea>
+						<b>Deskripsi</b>
+						<textarea class="form-control" name="deskripsi"></textarea>
 					</div>
 
 					<input type="submit" value="Upload" class="btn btn-primary">

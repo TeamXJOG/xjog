@@ -14,7 +14,7 @@ class Update2ObjekwisataTable extends Migration
     public function up()
     {
         Schema::table('objekwisata', function (Blueprint $table) {
-            $table->binary('gambarObjekwisata')->nullable();
+            $table->string('gambarObjekwisata')->nullable();
         });
     }
 

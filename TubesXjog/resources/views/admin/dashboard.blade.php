@@ -157,7 +157,7 @@
         <!-- MENU SIDEBAR-->
         <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo">
-                <a href="#">
+                <a href="/">
                     <img src="{{asset('Landing/alime/img/core-img/xjoglogo.png')}}" alt="" />
                 </a>
             </div>

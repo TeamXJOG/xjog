@@ -15,6 +15,7 @@
 <body>
     <div class="container">
     <a href="/">Home</a><h2>Profile</h2>
+
     <form action="/editprof" method="post">
     @csrf
     <div class="form-group">
@@ -25,10 +26,6 @@
     <label for="email">Email address</label>
     <input type="text" class="form-control" name="email" value="{{\Session::get('email')}}" id="email" aria-describedby="emailHelp">
      </div>
-    <div class="form-group form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-    </div>
     <button type="submit" class="btn btn-primary">Submit</button>
     <button type="reset" class="btn btn-primary">reset</button>
 </form>
