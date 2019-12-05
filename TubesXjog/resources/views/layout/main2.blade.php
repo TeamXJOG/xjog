@@ -60,9 +60,14 @@
                                     <li><a href="{{ url('/galeri')}}">Gallery</a></li>
                                     <li><a href="{{ url('/')}}">About</a></li>
                                     <li><a href="{{ url('/')}}">Settings</a></li>
+                                    @if(\Session::get('role') == 'admin')
+                                    <li><a href="{{ url('/dashboard')}}">Admin Dashboard</a></li>
+                                    @endif
                                     <li><a >Hallo, {{Session::get('name')}}</a>
                                     <ul class="dropdown">
+                                            @if(\Session::get('role') == 'user')
                                             <li><a href="/editprofile">Profile</a></li>
+                                            @endif
                                             <li><a href="{{ url('/logout')}}">Log Out</a></li>
                                             <!-- <li><a href="./gallery.html">- Gallery</a></li>
                                             <li><a href="./blog.html">- Blog</a></li>

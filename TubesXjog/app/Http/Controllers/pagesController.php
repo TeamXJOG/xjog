@@ -34,5 +34,14 @@ class pagesController extends Controller
     public function editprofile() {
         return view('user/profile');
     }
+
+    public function dashadmin() {
+        if(Session::get('role') == 'admin') {
+            return view('admin/dashboard');
+        }else {
+            return view('/');
+        }
+        
+    }
 }
     

@@ -41,6 +41,8 @@ Route::get('/logout','UserController@logout');
 
 Route::get('/signup','pagesController@signup');
 
+Route::get('/dashboard','pagesController@dashadmin');
+
 Route::get('/editprofile','pagesController@editprofile');
 
 Route::post('/editprof','UserController@editprof');

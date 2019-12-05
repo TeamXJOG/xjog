@@ -27,6 +27,7 @@ class UserController extends Controller
                 Session::put('name',$user->name);
                 Session::put('email',$user->email);
                 Session::put('id',$user->id);
+                Session::put('role',$user->role);
                 Session::put('login',TRUE);
                 return redirect('index_user');
             }
@@ -79,6 +80,7 @@ class UserController extends Controller
         $us =  new UserModel();
         $us->name = $request->name;
         $us->email = $request->email;
+        $us->role = 'user';
         $us->password = bcrypt($request->password);
         $us->save();
 
