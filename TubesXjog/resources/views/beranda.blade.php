@@ -28,25 +28,6 @@
             </div>
             @endforeach
 
-            <!-- Single Slide -->
-            <!-- <div class="single-welcome-slide bg-img bg-overlay" style="background-image: url({{asset('Landing/alime/img/bg-img/yogya3.jpg')}});">
-                <div class="container h-100">
-                    <div class="row h-100 align-items-center">
-                        Welcome Text -->
-                        <!-- <div class="col-12 col-lg-8 col-xl-6">
-                            <div class="welcome-text">
-                                <h2 data-animation="bounceInUp" data-delay="100ms">Candi <br>Prambanan</h2>
-                                <p data-animation="bounceInUp" data-delay="500ms">Candi Prambanan adalah sebuah kompleks candi Hindu yang merupakan ikon Kota Yogyakarta yang menjadi tujuan utama oleh para wisatawan baik lokal maupun domestik.</p>
-                                <div class="hero-btn-group" data-animation="bounceInUp" data-delay="900ms">
-                                    <a href="#" class="btn alime-btn mb-3 mb-sm-0 mr-4">Ikut Kontes</a>
-                                    <a class="hero-mail-contact" href="mailto:hello.alime@gmail.com">Detail Kontes</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-            
         </div>
     </section>
     <!-- Welcome Area End -->

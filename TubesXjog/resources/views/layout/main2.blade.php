@@ -59,7 +59,6 @@
                                     <li><a href="{{ url('/')}}">Home</a></li>
                                     <li><a href="{{ url('/galeri')}}">Gallery</a></li>
                                     <li><a href="{{ url('/')}}">About</a></li>
-                                    <li><a href="{{ url('/')}}">Settings</a></li>
                                     @if(\Session::get('role') == 'admin')
                                     <li><a href="{{ url('/dashboard')}}">Admin Dashboard</a></li>
                                     @endif
