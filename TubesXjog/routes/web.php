@@ -49,8 +49,10 @@ Route::post('/editprof','UserController@editprof');
 Route::post('/editpass','UserController@editpass');
 
 Route::post('/hapusakun','UserController@hapusakun');
+Route::get('/hapusakun2/{id}','UserController@hapusakun2');
 
 Route::get('/event','pagesController@upload');
 Route::post('/event/proses','eventController@upload_proses');
+Route::get('/event/hapusevent/{id}','eventController@hapusevent');
 
 Auth::routes();

@@ -17,6 +17,8 @@ class UserController extends Controller
         }
     }
 
+    
+
     public function logincheck(Request $request) {
         $email = $request->email;
         $password = $request->password;
@@ -66,6 +68,13 @@ class UserController extends Controller
         Session::flush();
 
         return redirect('/');
+    }
+
+    public function hapusakun2($id) {
+        $user = usermodel::find($id);
+    	$user->delete();
+ 
+    	return redirect('/dashboard');
     }
 
     public function editpass(Request $request) {

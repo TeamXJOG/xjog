@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session; 
 use App\event;
+use App\UserModel;
 
 class pagesController extends Controller
 {
@@ -42,11 +43,16 @@ class pagesController extends Controller
     }
 
     public function dashadmin() {
+        $user = UserModel::get();
+        $event = event::get();
+
+
         if(Session::get('role') == 'admin') {
-            return view('admin/dashboard');
+            return view('admin/dashboard', ['users' => $user], ['event' =>$event]);
         }else {
             return redirect('/');
         }
+
         
     }
 

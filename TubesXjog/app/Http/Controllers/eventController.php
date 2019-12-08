@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 use App\event;
 
 class eventController extends Controller
@@ -37,4 +39,12 @@ class eventController extends Controller
  
 		return redirect('/');
 	}
+
+
+	public function hapusevent($id) {
+        $event = event::find($id);
+    	$event->delete();
+ 
+    	return redirect('/dashboard');
+    }
 }

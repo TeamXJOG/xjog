@@ -20,9 +20,9 @@
                         <!-- Welcome Text -->
                         <div class="col-12 col-lg-8 col-xl-6">
                             <div class="welcome-text">
-                                <h2 data-animation="bounceInUp" data-delay="100ms">{{ $e->namaObjekwisata }}</h2>
-                                <p data-animation="bounceInUp" data-delay="500ms">{{ $e->deskripsiObjekwisata }}</p>
-                                <div class="hero-btn-group" data-animation="bounceInUp" data-delay="900ms">
+                                <h2 data-animation="bounceInUp" data-delay="60ms">{{ $e->namaObjekwisata }}</h2>
+                                <p data-animation="bounceInUp" data-delay="300ms">{{ $e->deskripsiObjekwisata }}</p>
+                                <div class="hero-btn-group" data-animation="bounceInUp" data-delay="600ms">
                                     <a href="#down" class="btn alime-btn mb-3 mb-sm-0 mr-4" >Ikut Kontes</a>
                                     <a class="hero-mail-contact" href="mailto:hello.alime@gmail.com">Detail Kontes</a>
                                 </div>
