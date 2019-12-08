@@ -46,6 +46,7 @@ Route::get('/dashboard','pagesController@dashadmin');
 Route::get('/editprofile','pagesController@editprofile');
 
 Route::post('/editprof','UserController@editprof');
+Route::post('/editpass','UserController@editpass');
 
 Route::post('/hapusakun','UserController@hapusakun');
 

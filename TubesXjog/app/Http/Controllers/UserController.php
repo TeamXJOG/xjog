@@ -68,6 +68,25 @@ class UserController extends Controller
         return redirect('/');
     }
 
+    public function editpass(Request $request) {
+        $user2 = UserModel::where('id',Session::get('id'))->first();
+        // dd($user2->id);
+        if(Hash::check($request->pass1, $user2->password)) {
+            $pass = array (
+                'password' => Hash::make($request->pass2) 
+            );  
+            // dd($pass);
+            UserModel::findOrfail($user2->id)->update($pass);
+            $user3 = UserModel::where('id',Session::get('id'))->first();
+            dd($user3->password);
+            Session::flush();
+            return redirect('/')->with('notifpass','Password Berhasil diubah, Silakan anda login kembali!');
+        }else {
+            return redirect()->back()->with('notifpass2','Password salah!');
+        }
+        
+    }
+
     public function registercheck(Request $request){
         
         // $this->validate($request, [

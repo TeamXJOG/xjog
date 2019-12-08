@@ -2,7 +2,12 @@
 @extends(\Session::get('login') ? 'layout.main2' : 'layout.main')
 @section('title', 'Home Xjog')
 @section('container')
-
+    
+        @if(\Session::has('notifpass'))
+            <script>
+                alert('{{Session::get("notifpass")}}');
+            </script>
+        @endif
     <!-- Welcome Area Start -->
     <section class="welcome-area">
         <div class="welcome-slides owl-carousel">

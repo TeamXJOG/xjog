@@ -13,12 +13,17 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </head>
 <body>
+        @if(\Session::has('notifpass2'))
+            <script>
+                alert('{{Session::get("notifpass2")}}');
+            </script>
+        @endif
     <!-- ========== navs =========== -->
     <div class="row">
   <div class="col-3">
     <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
       <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Edit Profile</a>
-      <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</a>
+      <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Ubah Password</a>
       <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages</a>
       <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</a>
     </div>
@@ -50,8 +55,26 @@
         </button>
     </div>
     <!-- ======= content ====== -->
-      </div>
-      <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">...</div>
+    </div>
+    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+    <!-- ====== content ====== -->
+    <div class="container">
+        <form action="/editpass" method="post">
+            @csrf
+            <div class="form-group">
+            <label for="pass1">Password Lama</label>
+            <input type="text" class="form-control" id="pass1" name="pass1">
+            </div>      
+            <div class="form-group">
+            <label for="pass2">Password Baru</label>
+            <input type="text" class="form-control" name="pass2" id="pass2" aria-describedby="emailHelp">
+            </div>
+            <button type="submit" class="btn btn-primary">Ubah</button>
+            <!-- <button type="reset" class="btn btn-primary">reset</button> -->
+        </form>
+    </div>
+    <!-- ====== content ====== -->
+    </div>
       <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">...</div>
       <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
     </div>
@@ -87,6 +110,7 @@
     </div>
   </div>
 </div>
+
 
 </body>
 </html>
