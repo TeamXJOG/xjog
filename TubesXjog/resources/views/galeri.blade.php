@@ -22,17 +22,48 @@
         </div>
     </section>
     <!-- Breadcrumb Area End -->
-    <br>
-    <div class="container">
-    @foreach($photo as $p)
-    <div class="col-lg-3">
-        <div class="thumbnail" style="max-height: 350px;min-height: 350px;">
-            <img alt="{{$p->title}}" src="{{ url('/galeri_file/'.$p->photo) }}">
+
+    <!-- Gallery Area Start -->
+    <div class="alime-portfolio-area section-padding-80 clearfix">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <!-- Projects Menu -->
+                    <div class="alime-projects-menu wow fadeInUp" data-wow-delay="100ms">
+                        <div class="portfolio-menu text-center">
+                            <button class="btn active" data-filter="*">All</button>
+                            <button class="btn" data-filter=".human">Human</button>
+                            <button class="btn" data-filter=".nature">Nature</button>
+                            <button class="btn" data-filter=".country">Country</button>
+                            <button class="btn" data-filter=".video">Video</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row alime-portfolio">
+                <!-- Single Gallery Item -->
+                @foreach($photo as $p)
+                <div class="col-12 col-sm-6 col-lg-3 single_gallery_item nature mb-30 wow fadeInUp" data-wow-delay="100ms">
+                    <div class="single-portfolio-content">
+                        <img src="{{ url('/galeri_file/'.$p->photo) }}" alt="">
+                        <div class="hover-content">
+                            <a href="{{ url('/galeri_file/'.$p->photo) }}" class="portfolio-img">+</a>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+                
+            </div>
+            <div class="row">
+                <div class="col-12 text-center wow fadeInUp" data-wow-delay="800ms">
+                    <a href="#" class="btn alime-btn btn-2 mt-15">View More</a>
+                </div>
+            </div>
         </div>
     </div>
-    @endforeach
-    </div>
-    
+    <!-- Gallery Area End -->
+   
     
     <!-- Footer Area End -->
 
