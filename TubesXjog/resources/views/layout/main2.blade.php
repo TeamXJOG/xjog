@@ -67,7 +67,12 @@
                                             @if(\Session::get('role') == 'user')
                                             <li><a href="/editprofile">Profile</a></li>
                                             @endif
-                                            <li><a href="{{ url('/logout')}}">Log Out</a></li>
+                                            <li>
+                                                <!-- Button trigger modal -->
+                                                <a href="" data-toggle="modal" data-target="#staticBackdrop">
+                                                Log Out
+                                                </a>
+                                            </li>
                                             <!-- <li><a href="./gallery.html">- Gallery</a></li>
                                             <li><a href="./blog.html">- Blog</a></li>
                                             <li><a href="./single-blog.html">- Blog Details</a></li>
@@ -100,3 +105,29 @@
     <script src="{{asset('Landing/alime/js/alime.bundle.js')}}"></script>
     <!-- Active -->
     <script src="{{asset('Landing/alime/js/default-assets/active.js')}}"></script>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Log Out</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Apakah anda yakin ingin Log Out?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak jadi</button>
+        <form action="/logout">
+            @csrf
+            <button type="submit" class="btn btn-primary">Ashiiap</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

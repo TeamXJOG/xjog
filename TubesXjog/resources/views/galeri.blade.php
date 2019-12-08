@@ -22,7 +22,17 @@
         </div>
     </section>
     <!-- Breadcrumb Area End -->
-
+    <br>
+    <div class="container">
+    @foreach($photo as $p)
+    <div class="col-lg-3">
+        <div class="thumbnail" style="max-height: 350px;min-height: 350px;">
+            <img alt="{{$p->title}}" src="{{ url('/galeri_file/'.$p->photo) }}">
+        </div>
+    </div>
+    @endforeach
+    </div>
+    
     
     <!-- Footer Area End -->
 

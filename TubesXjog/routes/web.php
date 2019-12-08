@@ -53,4 +53,7 @@ Route::post('/hapusakun','UserController@hapusakun');
 Route::get('/event','pagesController@upload');
 Route::post('/event/proses','eventController@upload_proses');
 
+Route::get('/uploadp/{id}','pagesController@uploadp');
+Route::post('/uploadphoto/{events}','photoController@uploadphoto');
+
 Auth::routes();
