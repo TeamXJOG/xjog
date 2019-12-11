@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session; 
 use App\event;
 use App\photo;
+use App\Comments;
 
 class pagesController extends Controller
 {
@@ -23,9 +24,10 @@ class pagesController extends Controller
     }
 
     Public function galeri() {
-        $photo = photo::get();
-
-        return view('galeri', ['photo' => $photo]);
+        // $photo = photo::get();
+        // $comment  = Comments::orderBy('id', 'DESC')->get();   
+        return view('galeri')->with('photo', photo::all())
+        ->with('komen', Comments::all());
     }
 
     Public function signin() {

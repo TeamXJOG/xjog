@@ -56,4 +56,10 @@ Route::post('/event/proses','eventController@upload_proses');
 Route::get('/uploadp/{id}','pagesController@uploadp');
 Route::post('/uploadphoto/{events}','photoController@uploadphoto');
 
+// Route::post('/galeri','AjaxController@index');
+// Route::post('/pushmsg','AjaxController@push');
+// Route::get('/datarealtime','AjaxController@realtime');
+
+// Route::post('/sendMessage', array('uses' => 'AjaxController@sendMessage'));
+
 Auth::routes();
