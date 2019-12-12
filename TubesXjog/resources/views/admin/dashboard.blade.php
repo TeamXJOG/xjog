@@ -12,7 +12,7 @@
                                 <div class="overview-wrap">
                                     <h2 class="title-1">overview</h2>
                                     <button class="au-btn au-btn-icon au-btn--blue" onclick="location.href='/signup'">
-                                        <i class="zmdi zmdi-plus"></i>+add user</button>
+                                        <i class="zmdi zmdi-plus"></i>add user</button>
                                 </div>
                             </div>
                         </div>

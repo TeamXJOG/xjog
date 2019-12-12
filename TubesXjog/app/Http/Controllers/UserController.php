@@ -17,8 +17,6 @@ class UserController extends Controller
         }
     }
 
-    
-
     public function logincheck(Request $request) {
         $email = $request->email;
         $password = $request->password;
@@ -98,12 +96,12 @@ class UserController extends Controller
 
     public function registercheck(Request $request){
         
-        // $this->validate($request, [
-        //     'name' => 'required|min:4',
-        //     'email' => 'required|min:4|email|unique:users',
-        //     'password' => 'required',
-        //     'password-confirmation' => 'required|same:password',
-        // ]);
+        $this->validate($request, [
+            'name' => 'required|min:4',
+            'email' => 'required|min:4|email|unique:users',
+            'password' => 'required',
+            'password_confirmation' => 'required|same:password',
+        ]);
         // dd($request->name);
         $us =  new UserModel();
         $us->name = $request->name;

@@ -48,11 +48,15 @@ Route::get('/editprofile','pagesController@editprofile');
 Route::post('/editprof','UserController@editprof');
 Route::post('/editpass','UserController@editpass');
 
+
 Route::post('/hapusakun','UserController@hapusakun');
 Route::get('/hapusakun2/{id}','UserController@hapusakun2');
 
 Route::get('/event','pagesController@upload');
 Route::post('/event/proses','eventController@upload_proses');
 Route::get('/event/hapusevent/{id}','eventController@hapusevent');
+
+Route::get('/uploadp/{id}','pagesController@uploadp');
+Route::post('/uploadphoto/{events}','photoController@uploadphoto');
 
 Auth::routes();

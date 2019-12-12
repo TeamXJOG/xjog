@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session; 
 use App\event;
+use App\photo;
 use App\UserModel;
 
 class pagesController extends Controller
@@ -23,7 +24,10 @@ class pagesController extends Controller
     }
 
     Public function galeri() {
-        return view('galeri');
+        $event = event::get();
+        $photo = photo::get();
+
+        return view('galeri', ['photo' => $photo], ['event' => $event]);
     }
 
     Public function signin() {
@@ -52,12 +56,20 @@ class pagesController extends Controller
         }else {
             return redirect('/');
         }
-
-        
     }
 
     public function upload() {
         return view('admin/upload');
+    }
+
+    public function uploadp($id) {
+        $event1 = event::where('id',$id)->first();
+        if(Session::get('role') == 'user') {
+            return view('user/uploadphoto', ['event1' => $event1]);
+        } else {
+            return redirect('/');
+        }
+        
     }
 }
     
