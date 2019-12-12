@@ -32,16 +32,10 @@
                     <div class="alime-projects-menu wow fadeInUp" data-wow-delay="100ms">
                         <div class="portfolio-menu text-center">
                             <button class="btn active" data-filter="*">All</button>
-<<<<<<< HEAD
                             <button class="btn" data-filter=".human">Human</button>
                             <button class="btn" data-filter=".nature">Nature</button>
                             <button class="btn" data-filter=".country">Country</button>
                             <button class="btn" data-filter=".video">Video</button>
-=======
-                            <!-- @foreach($event as $e)
-                            <button class="btn" data-filter=".{{$e->namaObjekwisata}}">{{$e->namaObjekwisata}}</button>
-                            @endforeach -->
->>>>>>> ef6358f7ad434b68c684e73e6dfe0faaf88b3e56
                         </div>
                     </div>
                 </div>
