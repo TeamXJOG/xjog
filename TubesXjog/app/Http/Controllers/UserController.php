@@ -17,8 +17,6 @@ class UserController extends Controller
         }
     }
 
-    
-
     public function logincheck(Request $request) {
         $email = $request->email;
         $password = $request->password;

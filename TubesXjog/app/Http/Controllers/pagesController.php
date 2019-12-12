@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session; 
 use App\event;
-use App\UserModel;
 use App\photo;
+use App\UserModel;
 use App\Comments;
 
 class pagesController extends Controller
@@ -57,8 +57,6 @@ class pagesController extends Controller
         }else {
             return redirect('/');
         }
-
-        
     }
 
     public function upload() {
