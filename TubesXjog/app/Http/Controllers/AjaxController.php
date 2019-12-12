@@ -12,14 +12,16 @@ class AjaxController extends Controller
     public function index(Request $request) {
         if( $request->ajax()) {
             $data = Comments::latest()->get();
-            return DataTables::of($data)->addIndexColumn()->addColumn('action', function($row) {
-                $btn = '<a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$row->id.'" data-original-title="Edit" class="edit btn btn-primary btn-sm editBook">Edit</a>';
+            return DataTables::of($data)
+            // ->addIndexColumn()->addColumn('action', function($row) {
+            //     $btn = '<a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$row->id.'" data-original-title="Edit" class="edit btn btn-primary btn-sm editBook">Edit</a>';
    
-                $btn = $btn.' <a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$row->id.'" data-original-title="Delete" class="btn btn-danger btn-sm deleteBook">Delete</a>';
+            //     $btn = $btn.' <a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$row->id.'" data-original-title="Delete" class="btn btn-danger btn-sm deleteBook">Delete</a>';
     
-                return $btn;
+            //     return $btn;
                 
-            })->rawColumns(['action'])->make(true);
+            // })->rawColumns(['action'])->make(true)
+            ;
         }
         return view('galeri',compact('comments'));
      }
