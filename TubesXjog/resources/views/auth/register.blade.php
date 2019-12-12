@@ -127,7 +127,7 @@
 					<!-- ---confirm pass--- -->
 					<div class="wrap-input100 validate-input m-b-23" data-validate="Kata sandi harus diisi">
 						    <span class="label-input100">Ulangi Password</span>
-						        <input id="password-confirm" type="password" class="input100" name="password_confirmation" required autocomplete="new-password">
+						        <input id="password_confirmation" type="password" class="input100" name="password_confirmation" required autocomplete="new-password">
                             <span class="focus-input100" data-symbol="&#xf191;"></span>
 					</div>
 

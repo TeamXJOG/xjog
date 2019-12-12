@@ -14,11 +14,11 @@ class CreatePhotosTable extends Migration
     public function up()
     {
         Schema::create('photos', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->integer('event_id');
-            $table->integer('user_id');
+            $table->increments('id');
+            $table->integer('event_id')->unsigned();
+            $table->integer('user_id')->unsigned();
             $table->string('photo');
-            $table->string('title');
+            $table->text('title');
             $table->timestamps();
         });
     }
