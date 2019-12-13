@@ -41,7 +41,7 @@ class UserController extends Controller
 
     public function logout() {
         Session::flush();
-        return redirect('/');
+        return redirect()->back();
     }
 
     public function editprof(Request $request) {

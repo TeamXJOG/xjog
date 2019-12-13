@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Comments;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Validator;
 use DataTables;
 
 class AjaxController extends Controller
@@ -33,21 +34,51 @@ class AjaxController extends Controller
          return response()->json(['success'=>'Book saved successfully.']);
      }
 
-    public function realtime() {
+    public function realtime($id) {
         $comment  = Comments::orderBy('id', 'DESC')->get();
         return view('galeri',['komen' =>$comment]);   
     }
     
     public function push(Request $request) {
-        $comm = array (
-            'komen' => $request->comment,
-            'user_id' => 1,
-            'photo_id' => 1
+        // dd(Session::get('id'));
+        // return $request->comment_field;
+        
+        
+        // // dd($comment);
+        $messages = [
+
+            'required' => 'The :attribute field is required '
+
+        ];
+
+        $Validator = Validator::make(
+            $request->all(),
+
+            [
+                'comment_field' => 'required',
+            ],
+
+            $messages
         );
-        Comments::create($comm);
-        $comment  = Comments::all();
-        // dd($comment);
-        return response()->json(array('komen'=> $comment->komen), 200);
+
+        if($Validator->fails()) {
+
+            $Response = $Validator->messages();
+        
+        }else {
+
+            $comm = array (
+                'komen' => $request->comment_field,
+                'user_id' => Session::get('id'),
+                'photo_id' => $request->id_p
+            );
+            Comments::create($comm);
+            // $komms  = Comments::all();
+
+            $Response = ['success' => 'nice tidy'];
+        }
+
+        return response()->json($Response, 200);
     }
 
     public function sendMessage()
@@ -60,4 +91,6 @@ class AjaxController extends Controller
         $chatMessage->message = $text;
         $chatMessage->save();
     }
+
+    
 }

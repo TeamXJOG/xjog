@@ -32,10 +32,9 @@
                     <div class="alime-projects-menu wow fadeInUp" data-wow-delay="100ms">
                         <div class="portfolio-menu text-center">
                             <button class="btn active" data-filter="*">All</button>
-                            <button class="btn" data-filter=".human">Human</button>
-                            <button class="btn" data-filter=".nature">Nature</button>
-                            <button class="btn" data-filter=".country">Country</button>
-                            <button class="btn" data-filter=".video">Video</button>
+                            @foreach($event as $e)
+                            <button class="btn" data-filter=".{{$e->id}}">{{$e->namaObjekwisata}}</button>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -44,28 +43,30 @@
             <div class="row alime-portfolio">
                 <!-- Single Gallery Item -->
                 @foreach($photo as $p)
-                <div class="col-12 col-sm-6 col-lg-3 single_gallery_item nature mb-30 wow fadeInUp" data-wow-delay="100ms">
+                <div class="col-12 col-sm-6 col-lg-3 single_gallery_item {{$p->event_id}} mb-30 wow fadeInUp" data-wow-delay="100ms">
                     <div class="single-portfolio-content">
                         <img src="{{ url('/galeri_file/'.$p->photo) }}" alt="">
                         <div class="hover-content">
-                            <!-- <p align="center">{{$p->title}}</p> -->
+                            <p align="center">{{$p->title}}</p>
                             <!-- <a href="{{ url('/galeri_file/'.$p->photo) }}" class="portfolio-img">+</a> -->
-                            <input type="checkbox" value="1" name="like">
+                            @if(\Session::has('login'))
+                            <input type="checkbox" value="1" name="like" id="like">
                             <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                            <button type="button" class="btn btn-primary" data-id_photo="{{$p->id}}" data-toggle="modal" data-target="#exampleModalCenter">
                                 comment
                             </button>
+                            @endif
                         </div>
                     </div>
                 </div>
                 @endforeach
                 
             </div>
-            <div class="row">
+            <!-- <div class="row">
                 <div class="col-12 text-center wow fadeInUp" data-wow-delay="800ms">
                     <a href="#" class="btn alime-btn btn-2 mt-15">View More</a>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
     <!-- Gallery Area End -->
@@ -73,17 +74,7 @@
     
     <!-- Footer Area End -->
 
-    <!-- **** All JS Files ***** -->
-    <!-- jQuery 2.2.4 -->
-    <script src="{{asset('Landing/alime/js/jquery.min.js')}}"></script>
-    <!-- Popper -->
-    <script src="{{asset('Landing/alime/js/popper.min.js')}}"></script>
-    <!-- Bootstrap -->
-    <script src="{{asset('Landing/alime/js/bootstrap.min.js')}}"></script>
-    <!-- All Plugins -->
-    <script src="{{asset('Landing/alime/js/alime.bundle.js')}}"></script>
-    <!-- Active -->
-    <script src="{{asset('Landing/alime/js/default-assets/active.js')}}"></script>
+    
 
     <!-- ----- AJAX ----- -->
 
@@ -111,11 +102,11 @@
         </div>
       </div>
       <div class="modal-footer">
-      <form action="" method="">
+      <form id="form-komen" data-route="/pushmsg" method="post">
       @csrf
-        <input type="text" id="comment_field" name="comment_field" placeholder="Tulis komentar">
-
-        <button type="button" id="comment_send" class="btn btn-primary" >Submit</button>
+        <input type="text" id="comment_field" name="comment_field" placeholder="Tulis komentar" value="">
+        <input type="hidden" name="id_p" id="id_p">
+        <button type="submit" class="btn btn-primary" >Submit</button>
       </form>
         
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -165,7 +156,42 @@
             }
         }
 </script> -->
+<!-- **** All JS Files ***** -->
+    <!-- jQuery 2.2.4 -->
+    <script src="{{asset('Landing/alime/js/jquery.min.js')}}"></script>
+    <!-- Popper -->
+    <script src="{{asset('Landing/alime/js/popper.min.js')}}"></script>
+    <!-- Bootstrap -->
+    <script src="{{asset('Landing/alime/js/bootstrap.min.js')}}"></script>
+    <!-- All Plugins -->
+    <script src="{{asset('Landing/alime/js/alime.bundle.js')}}"></script>
+    <!-- Active -->
+    <script src="{{asset('Landing/alime/js/default-assets/active.js')}}"></script>
+
 <script src="{{asset('komen.js')}}"></script>
+<script src="{{asset('like.js')}}"></script>
+<script>
+
+$('#exampleModalCenter').on('show.bs.modal', function(event) {
+    var button = $(event.relatedTarget)
+    var id_photo = button.data('id_photo')
+
+    var modal = $(this)
+    modal.find('.modal-footer #id_p').val(id_photo);
+
+})
+
+</script>
+
+<script>
+
+    var auto_ref = setInterval(
+        function() {
+            $('#comment_window').load("{{ url('komen') }}").fadeIn("slow");
+        }, 600);
+
+</script>
+
 </body>
 
 </html>

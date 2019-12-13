@@ -1,24 +1,24 @@
-var komentar = document.getElementById('comment_field');
-var tombol = document.getElementById('comment_send');
-var komenWindow = document.getElementById('comment_window');
+$(function() {
+    
+    $('#form-komen').submit(function(e) {
+        var route = $('#form-komen').data('route');
+        var komen_data = $(this);
 
-tombol.addEventListener('click', function() {
-    //objek ajax
+        $.ajax({
+            type: 'post',
+            url: route,
+            data: komen_data.serialize(),
+            success: function(Response) {
+                console.log(Response);
+                if(Response.success) {
+                    $('#comment_field').val('');
+                }
+                  
+            }
+        });
 
-    var xhr = new XMLHttpRequest();
+        e.preventDefault();
 
-    // console.log('ajax ok');
+    });
 
-    //cek kesiapan ajax
-    xhr.onreadystatechange = function() {
-        if( xhr.readyState == 4 && xhr.status == 200 ) {
-            console.log('ajax ok');
-        }
-        console.log('ajax ok');
-
-    }
-
-    //eksekusi ajax
-    // xhr.open('POST', '', true);
-    // xhr.send();
 });

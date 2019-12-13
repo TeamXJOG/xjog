@@ -9,6 +9,7 @@ use App\event;
 use App\photo;
 use App\UserModel;
 use App\Comments;
+// use App\event;
 
 class pagesController extends Controller
 {
@@ -27,7 +28,7 @@ class pagesController extends Controller
     Public function galeri() {
         // $photo = photo::get();
         // $comment  = Comments::orderBy('id', 'DESC')->get();   
-        return view('galeri')->with('photo', photo::all())
+        return view('galeri')->with('event', event::all())->with('photo', photo::all())
         ->with('komen', Comments::all());
     }
 
