@@ -73,7 +73,7 @@
                                     <li><a >Hallo, {{Session::get('name')}}</a>
                                     <ul class="dropdown">
                                             @if(\Session::get('role') == 'user')
-                                            <li><a href="/editprofile">Profile</a></li>
+                                            <li><a href="{{ url('/editprofile') }}">Profile</a></li>
                                             @endif
                                             <li>
                                                 <!-- Button trigger modal -->
