@@ -158,7 +158,8 @@
 </script> -->
 <!-- **** All JS Files ***** -->
     <!-- jQuery 2.2.4 -->
-    <script src="{{asset('Landing/alime/js/jquery.min.js')}}"></script>
+    <!-- <script src="{{asset('Landing/alime/js/jquery.min.js')}}"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!-- Popper -->
     <script src="{{asset('Landing/alime/js/popper.min.js')}}"></script>
     <!-- Bootstrap -->
@@ -178,19 +179,22 @@ $('#exampleModalCenter').on('show.bs.modal', function(event) {
 
     var modal = $(this)
     modal.find('.modal-footer #id_p').val(id_photo);
-
+    // console.log(id_photo);
+    // var id = document.getElementById('id_p').value;
+    // console.log(id);
+    var auto_ref = setInterval(
+        function() {
+            $('#comment_window').load("/datarealtime/"+id_photo).fadeIn("slow");
+            console.log(id_photo)
+        }, 3000);
 })
 
 </script>
 
-<script>
+<!-- <script>
+    
 
-    var auto_ref = setInterval(
-        function() {
-            $('#comment_window').load("{{ url('komen') }}").fadeIn("slow");
-        }, 600);
-
-</script>
+</script> -->
 
 </body>
 

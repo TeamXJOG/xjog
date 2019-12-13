@@ -61,14 +61,14 @@ Route::post('/uploadphoto/{events}','photoController@uploadphoto');
 
 // Route::post('/galeri','AjaxController@index');
 Route::post('/pushmsg','AjaxController@push');
-Route::get('/datarealtime','AjaxController@realtime');
+Route::get('/datarealtime/{id}','AjaxController@realtime');
 
 // Route::post('/sendMessage', array('uses' => 'AjaxController@sendMessage'));
 
 
 
-Route::view('komen', 'komenan' , [
-    'datakomen' => App\Comments::all()
-]);
+// Route::view('komen', 'komenan' , [
+//     'datakomen' => App\Comments::all()
+// ]);
 
 Auth::routes();

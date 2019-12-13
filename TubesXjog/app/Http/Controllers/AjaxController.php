@@ -35,8 +35,8 @@ class AjaxController extends Controller
      }
 
     public function realtime($id) {
-        $comment  = Comments::orderBy('id', 'DESC')->get();
-        return view('galeri',['komen' =>$comment]);   
+        $comment  = Comments::where('photo_id', $id)->orderBy('id', 'DESC')->get();
+        return view('komenan',['datakomen' =>$comment]);   
     }
     
     public function push(Request $request) {
