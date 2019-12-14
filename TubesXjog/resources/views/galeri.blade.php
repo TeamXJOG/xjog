@@ -132,7 +132,7 @@ $('#exampleModalCenter').on('show.bs.modal', function(event) {
 
     var modal = $(this);
     modal.find('.modal-footer #id_p').val(id_photo);
-    modal.find('.modal-body #img_window').append("<img id='imgeg' src='{{ url('/galeri_file/"+photo_nya+") }}'>");
+    modal.find('.modal-body #img_window').append("<img id='imgeg' src='{{ url('/galeri_file/"+photo_nya+"') }}'>");
     // console.log(id_photo);
     // var id = document.getElementById('id_p').value;
     // console.log(id);
