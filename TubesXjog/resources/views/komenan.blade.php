@@ -1,3 +1,4 @@
+<table width="100%">
 @foreach($datakomen as $d)
 <tr>
     <td><p>{{$d->user->name}}</p></td>
@@ -12,3 +13,4 @@
     <td></td>
 </tr>
 @endforeach
+</table>
