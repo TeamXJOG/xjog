@@ -32,7 +32,11 @@ class eventController extends Controller
 		event::create([
 			'namaObjekwisata' => $request->nama,
 			'gambarObjekwisata' => $nama_file,
-			'deskripsiObjekwisata' => $request->deskripsi
+			'deskripsiObjekwisata' => $request->deskripsi,
+			'lokasiObjekwisata' => $request->lokasi,
+			'tanggalMulai' => $request->date1,
+			'tanggalSelesai' => $request->date2,
+			'syaratKetentuan' => $request->syaratketentuan,
 		]);
  
 		return redirect('/');

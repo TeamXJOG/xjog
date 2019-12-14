@@ -63,6 +63,8 @@ Route::post('/uploadphoto/{events}','photoController@uploadphoto');
 Route::post('/pushmsg','AjaxController@push');
 Route::get('/datarealtime/{id}','AjaxController@realtime');
 
+Route::get('/detail/{id}', 'detailController@open');
+
 // Route::post('/sendMessage', array('uses' => 'AjaxController@sendMessage'));
 
 
