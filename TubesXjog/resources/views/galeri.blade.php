@@ -170,7 +170,7 @@
     <script src="{{asset('Landing/alime/js/default-assets/active.js')}}"></script>
 
 <script src="{{asset('komen.js')}}"></script>
-<script src="{{asset('like.js')}}"></script>
+<!-- <script src="{{asset('like.js')}}"></script> -->
 <script>
 
 $('#exampleModalCenter').on('show.bs.modal', function(event) {
