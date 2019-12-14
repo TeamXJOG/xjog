@@ -1,5 +1,14 @@
 @foreach($datakomen as $d)
-<p>{{$d->user->name}}</p>
-<p>{{$d->komen}}</p>
-<hr>    
+<tr>
+    <td><p>{{$d->user->name}}</p></td>
+    <td><p>{{$d->created_at}}</p></td>
+</tr>
+<tr>
+    <td colspan="2"><p>{{$d->komen}}</p></td>
+    <td></td>
+</tr>    
+<tr>
+    <td colspan="2"><hr></td>
+    <td></td>
+</tr>
 @endforeach

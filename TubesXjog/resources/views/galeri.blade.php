@@ -85,7 +85,7 @@
     </script>   -->
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="exampleModalCenter" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -109,7 +109,7 @@
         <button type="submit" class="btn btn-primary" >Submit</button>
       </form>
         
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button id="tutupkomen" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         
       </div>
     </div>
@@ -184,9 +184,13 @@ $('#exampleModalCenter').on('show.bs.modal', function(event) {
     // console.log(id);
     var auto_ref = setInterval(
         function() {
-            $('#comment_window').load("/datarealtime/"+id_photo).fadeIn("slow");
+            $('#comment_window').load("/datarealtime/"+id_photo).fadeIn("fast");
             console.log(id_photo)
-        }, 3000);
+        }, 500);
+    var cancel = document.getElementById('tutupkomen');
+    cancel.addEventListener( 'click', function() {
+        clearInterval(auto_ref);
+    });    
 })
 
 </script>
