@@ -63,12 +63,5 @@ Route::post('/uploadphoto/{events}','photoController@uploadphoto');
 Route::post('/pushmsg','AjaxController@push');
 Route::get('/datarealtime/{id}','AjaxController@realtime');
 
-// Route::post('/sendMessage', array('uses' => 'AjaxController@sendMessage'));
-
-
-
-// Route::view('komen', 'komenan' , [
-//     'datakomen' => App\Comments::all()
-// ]);
 
 Auth::routes();
