@@ -52,15 +52,25 @@ $(document).ready(function() {
         var id = el.data('id');
         console.log(id);    
         $.ajax({
-            type: "POST",
-            url: '/likemsg',
+            // type: "POST",
+            url: '/likemsg/' +id,
             data: { value: el.value},
             success: function(data) {
                 console.log(data);
             }        
         });
         }else {
-
+            console.log('kepencet')
+            var id = el.data('id');
+            console.log(id);    
+            $.ajax({
+                // type: "POST",
+                url: '/unlikemsg/' +id,
+                data: { value: el.value},
+                success: function(data) {
+                    console.log(data);
+                }        
+            }); 
         }
 
         e.preventDefault();

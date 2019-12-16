@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Comments;
+use App\photo;
+use App\Like;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 use DataTables;
@@ -81,7 +83,7 @@ class AjaxController extends Controller
         return response()->json($Response, 200);
     }
 
-    public function like(Request $request) {
+    public function like($id) {
         // dd(Session::get('id'));
         // dd($request->like);
         // return $request->comment_field;
@@ -96,49 +98,33 @@ class AjaxController extends Controller
             // Comments::create($comm);
             // $komms  = Comments::all();
 
-            $Response = ['success' => 'haha'];
+            $hasil = new Like();
+
+            $hasil->user_id = Session::get('id');
+
+            $hasil->photo_id = $id;
+
+            $hasil->save();
+
+            $count = Like::where('photo_id', $id)->count();
+
+            // photo::findOrfail($id)->update($pass);
+
+
+            $Response = ['success' => $count];
 
         return response()->json($Response, 200);
     }
 
-    public function unlike(Request $request) {
-        // dd(Session::get('id'));
-        // return $request->comment_field;
-        
-        
-        // // dd($comment);
-        $messages = [
+    public function unlike($id) {
+            Like::where('photo_id', $id)->where('user_id', Session::get('id'))->delete();
 
-            'required' => 'The :attribute field is required '
+            $count = Like::where('photo_id', $id)->count();
 
-        ];
+            // photo::findOrfail($id)->update($pass);
 
-        $Validator = Validator::make(
-            $request->all(),
 
-            [
-                'comment_field' => 'required',
-            ],
-
-            $messages
-        );
-
-        if($Validator->fails()) {
-
-            $Response = $Validator->messages();
-        
-        }else {
-
-            $comm = array (
-                'komen' => $request->comment_field,
-                'user_id' => Session::get('id'),
-                'photo_id' => $request->id_p
-            );
-            Comments::create($comm);
-            // $komms  = Comments::all();
-
-            $Response = ['success' => 'nice tidy'];
-        }
+            $Response = ['success' => $count];
 
         return response()->json($Response, 200);
     }
