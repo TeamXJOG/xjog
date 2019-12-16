@@ -24,12 +24,13 @@
                                 <p data-animation="bounceInUp" data-delay="500ms">{{ $e->deskripsiObjekwisata }}</p>
                                 <div class="hero-btn-group" data-animation="bounceInUp" data-delay="900ms">
                                     <a href="/uploadp/{{$e->id}}" class="btn alime-btn mb-3 mb-sm-0 mr-4" >Ikut Kontes</a>
-                                    <a class="hero-mail-contact" href="/">Detail Kontes</a>
+                                    <a class="hero-mail-contact" href="/detail/{{ $e->id}}">Detail Kontes</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
             @endforeach
 

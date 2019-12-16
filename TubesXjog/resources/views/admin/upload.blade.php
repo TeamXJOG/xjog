@@ -60,6 +60,26 @@
 						<textarea class="form-control" name="deskripsi"></textarea>
 					</div>
 
+					<div class="form-group">
+						<b>Alamat lengkap Lokasi</b>
+						<textarea class="form-control" name="lokasi"></textarea>
+					</div>
+
+					<div class="form-group">
+						<b>Tanggal Mulai</b><br/>
+						<input type="date" name="date1">
+					</div>
+					<div class="form-group">
+						<b>Tanggal Selesai</b><br/>
+						<input type="date" name="date2">
+					</div>
+					<div class="form-group">
+						<b>Syarat dan Ketentuan</b>
+						<textarea class="form-control" name="syaratketentuan"></textarea>
+					</div>
+
+					
+
 					<input type="submit" value="Upload" class="btn btn-primary">
 				</form>
 			</div>

@@ -66,5 +66,14 @@ Route::get('/likemsg/{id}','AjaxController@like');
 Route::get('/unlikemsg/{id}','AjaxController@unlike');
 
 
+Route::get('/detail/{id}', 'detailController@open');
+
+// Route::post('/sendMessage', array('uses' => 'AjaxController@sendMessage'));
+
+
+
+// Route::view('komen', 'komenan' , [
+//     'datakomen' => App\Comments::all()
+// ]);
 
 Auth::routes();
