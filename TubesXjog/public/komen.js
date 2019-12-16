@@ -1,6 +1,6 @@
-$(function() {
-    
+$(function() { 
     $('#form-komen').submit(function(e) {
+        e.preventDefault();
         var route = $('#form-komen').data('route');
         var komen_data = $(this);
 
@@ -15,10 +15,6 @@ $(function() {
                 }
                   
             }
-        });
-
-        e.preventDefault();
-
+        });      
     });
-
 });

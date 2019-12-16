@@ -2,6 +2,14 @@
 @section('title', 'Home Xjog')
 
 @section('container')
+<style>
+    #butt {
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+
+    }
+</style>
 
 <!-- Breadcrumb Area Start -->
 <section class="breadcrumb-area bg-img bg-overlay jarallax" style="background-image: url({{asset('Landing/alime/img/bg-img/yogya3.jpg')}});">
@@ -41,6 +49,7 @@
             </div>
 
             <div class="row alime-portfolio">
+            
                 <!-- Single Gallery Item -->
                 @foreach($photo as $p)
                 <div class="col-12 col-sm-6 col-lg-3 single_gallery_item {{$p->event_id}} mb-30 wow fadeInUp" data-wow-delay="100ms">
@@ -50,9 +59,15 @@
                             <p align="center">{{$p->title}}</p>
                             <!-- <a href="{{ url('/galeri_file/'.$p->photo) }}" class="portfolio-img">+</a> -->
                             @if(\Session::has('login'))
-                            <input type="checkbox" value="1" name="like" id="like">
+                            <form id="form-suka" method="post" data-route="/likemsg">
+                            @csrf
+                            <!-- @method('get') -->
+                                <input type="hidden" name="kondisi_like" id="kondisi_like">
+                                <input type="checkbox" data-id="{{$p->id}}" value="{{$p->id}}" class="like" name="like" id="like_{{$p->id}}">
+                                <!-- <button type="submit">haha</button> -->
+                            </form>
                             <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-primary" data-id_photo="{{$p->id}}" data-photonya="{{$p->photo}}" data-toggle="modal" data-target="#exampleModalCenter">
+                            <button type="button" id="butt" class="btn btn-primary" data-id_photo="{{$p->id}}" data-photonya="{{$p->photo}}" data-toggle="modal" data-target="#exampleModalCenter">
                                 comment
                             </button>
                             @endif
@@ -64,8 +79,7 @@
         </div>
     </div>
     <!-- Gallery Area End -->
-   
-    
+
     <!-- Footer Area End -->
 
 <!-- Modal -->
@@ -82,12 +96,14 @@
         <table>
             <tr>
                 <td>
-                    <div id="comment_window">
-                    </div>        
+                    <div id="img_window">
+
+                    </div>
                 </td>
                 <td>
-                    <div id="img_window">
-                    </div>
+                    <div id="comment_window">
+
+                    </div>        
                 </td>
             </tr>
         </table>
@@ -100,7 +116,6 @@
         <input type="hidden" name="id_p" id="id_p">
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
-        
         <button id="tutupkomen" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         
       </div>
@@ -112,6 +127,7 @@
 <!-- **** All JS Files ***** -->
     <!-- jQuery Latest on Internet -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <!-- Popper -->
     <script src="{{asset('Landing/alime/js/popper.min.js')}}"></script>
     <!-- Bootstrap -->
@@ -122,7 +138,7 @@
     <script src="{{asset('Landing/alime/js/default-assets/active.js')}}"></script>
 
 <script src="{{asset('komen.js')}}"></script>
-<!-- <script src="{{asset('like.js')}}"></script> -->
+<script src="{{asset('like.js')}}"></script>
 
 <script>
 $('#exampleModalCenter').on('show.bs.modal', function(event) {
@@ -132,20 +148,21 @@ $('#exampleModalCenter').on('show.bs.modal', function(event) {
 
     var modal = $(this);
     modal.find('.modal-footer #id_p').val(id_photo);
-    modal.find('.modal-body #img_window').append("<img id='imgeg' src='{{ url('/galeri_file/"+photo_nya+"') }}'>");
+    console.log(photo_nya);
+    modal.find('.modal-body #img_window').append('<img id="imgeg" src="{{ url("/galeri_file/".'+photo_nya+') }}" alt="">');
     // console.log(id_photo);
     // var id = document.getElementById('id_p').value;
     // console.log(id);
     var auto_ref = setInterval(
         function() {
-            $('#comment_window').load("/datarealtime/"+id_photo).fadeIn(600);
+            $('#comment_window').load("/datarealtime/"+id_photo).fadeIn("slow");
             console.log(id_photo);
         }, 500);
     var cancel = document.getElementById('tutupkomen');
     cancel.addEventListener( 'click', function() {
         clearInterval(auto_ref);
         $('#imgeg').remove();
-        // $('#comment_window').remove();   
+        $('#comment_window').empty();   
 
     });    
 });

@@ -81,6 +81,68 @@ class AjaxController extends Controller
         return response()->json($Response, 200);
     }
 
+    public function like(Request $request) {
+        // dd(Session::get('id'));
+        // dd($request->like);
+        // return $request->comment_field;
+        
+        // $like = $this->input->post("like");
+        // // dd($comment);
+            // $comm = array (
+            //     'komen' => $request->comment_field,
+            //     'user_id' => Session::get('id'),
+            //     'photo_id' => $request->id_p
+            // );
+            // Comments::create($comm);
+            // $komms  = Comments::all();
+
+            $Response = ['success' => 'haha'];
+
+        return response()->json($Response, 200);
+    }
+
+    public function unlike(Request $request) {
+        // dd(Session::get('id'));
+        // return $request->comment_field;
+        
+        
+        // // dd($comment);
+        $messages = [
+
+            'required' => 'The :attribute field is required '
+
+        ];
+
+        $Validator = Validator::make(
+            $request->all(),
+
+            [
+                'comment_field' => 'required',
+            ],
+
+            $messages
+        );
+
+        if($Validator->fails()) {
+
+            $Response = $Validator->messages();
+        
+        }else {
+
+            $comm = array (
+                'komen' => $request->comment_field,
+                'user_id' => Session::get('id'),
+                'photo_id' => $request->id_p
+            );
+            Comments::create($comm);
+            // $komms  = Comments::all();
+
+            $Response = ['success' => 'nice tidy'];
+        }
+
+        return response()->json($Response, 200);
+    }
+
     public function sendMessage()
     {
         $username = Input::get('username');

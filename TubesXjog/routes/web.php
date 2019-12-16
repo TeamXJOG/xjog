@@ -62,6 +62,9 @@ Route::post('/uploadphoto/{events}','photoController@uploadphoto');
 // Route::post('/galeri','AjaxController@index');
 Route::post('/pushmsg','AjaxController@push');
 Route::get('/datarealtime/{id}','AjaxController@realtime');
+Route::post('/likemsg','AjaxController@like');
+// Route::post('/unlikemsg','AjaxController@unlike');
+
 
 
 Auth::routes();
