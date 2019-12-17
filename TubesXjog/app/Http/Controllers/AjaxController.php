@@ -106,7 +106,7 @@ class AjaxController extends Controller
 
             $hasil->save();
 
-            $count = Like::where('photo_id', $id)->count();
+            $count = Like::where('photo_id', $id)->where('user_id', Session::get('id'))->count();
 
             // photo::findOrfail($id)->update($pass);
 
@@ -119,7 +119,7 @@ class AjaxController extends Controller
     public function unlike($id) {
             Like::where('photo_id', $id)->where('user_id', Session::get('id'))->delete();
 
-            $count = Like::where('photo_id', $id)->count();
+            $count = Like::where('photo_id', $id)->where('user_id', Session::get('id'))->count();
 
             // photo::findOrfail($id)->update($pass);
 

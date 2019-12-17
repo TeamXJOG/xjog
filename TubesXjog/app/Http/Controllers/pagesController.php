@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session; 
 use App\event;
 use App\photo;
+use App\Like;
 use App\UserModel;
 use App\Comments;
 // use App\event;
@@ -27,9 +28,16 @@ class pagesController extends Controller
 
     Public function galeri() {
         // $photo = photo::get();
-        // $comment  = Comments::orderBy('id', 'DESC')->get();   
-        return view('galeri')->with('event', event::all())->with('photo', photo::all())
-        ->with('komen', Comments::all());
+        // $comment  = Comments::orderBy('id', 'DESC')->get(); 
+        if(Session::has('login')) {
+            return view('galeri')->with('event', event::all())->with('photo', photo::all())
+            ->with('komen', Comments::all())->with('userLikes', Like::where('user_id', Session::get('id'))->get());
+        }else {
+            return view('galeri')->with('event', event::all())->with('photo', photo::all())
+            ->with('komen', Comments::all());
+        }
+        
+        
     }
 
     Public function signin() {

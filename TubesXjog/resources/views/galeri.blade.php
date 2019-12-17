@@ -59,13 +59,23 @@
                             <p align="center">{{$p->title}}</p>
                             <!-- <a href="{{ url('/galeri_file/'.$p->photo) }}" class="portfolio-img">+</a> -->
                             @if(\Session::has('login'))
-                            <form id="form-suka" method="post" data-route="/likemsg">
-                            @csrf
-                            <!-- @method('get') -->
-                                <input type="hidden" name="kondisi_like" id="kondisi_like">
+                                @if(empty($userLikes))
                                 <input type="checkbox" data-id="{{$p->id}}" value="{{$p->id}}" class="like" name="like" id="like_{{$p->id}}">
-                                <!-- <button type="submit">haha</button> -->
-                            </form>
+                                @else
+                                    @php $check = false;  @endphp
+                                        @foreach($userLikes as $ul)
+                                            @if($ul->photo_id == $p->id)
+                                                @php $check = false;  @endphp
+                                                <input type="checkbox" data-id="{{$p->id}}" value="{{$p->id}}" class="like" name="like" id="like_{{$p->id}}" checked>
+                                            @else
+                                                @php  $check = true;  @endphp
+                                            @endif
+                                    @endforeach
+                                            @if($check == true)
+                                            <input type="checkbox" data-id="{{$p->id}}" value="{{$p->id}}" class="like" name="like" id="like_{{$p->id}}">
+                                            @endif
+                                   
+                                @endif    
                             <!-- Button trigger modal -->
                             <button type="button" id="butt" class="btn btn-primary" data-id_photo="{{$p->id}}" data-photonya="{{$p->photo}}" data-toggle="modal" data-target="#exampleModalCenter">
                                 comment
