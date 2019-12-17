@@ -23,7 +23,14 @@
                                 <h2 data-animation="bounceInUp" data-delay="100ms">{{ $e->namaObjekwisata }}</h2>
                                 <p data-animation="bounceInUp" data-delay="500ms">{{ $e->deskripsiObjekwisata }}</p>
                                 <div class="hero-btn-group" data-animation="bounceInUp" data-delay="900ms">
+                                    @if(\Session::get('role') == 'user')
                                     <a href="/uploadp/{{$e->id}}" class="btn alime-btn mb-3 mb-sm-0 mr-4" >Ikut Kontes</a>
+                                    @else
+                                    <!-- Button trigger modal -->
+                                    <a href="" data-toggle="modal" data-target="#staticBackdrop" class="btn alime-btn mb-3 mb-sm-0 mr-4">
+                                                Ikut Kontes
+                                                </a>
+                                    @endif            
                                     <a class="hero-mail-contact" href="/detail/{{ $e->id}}">Detail Kontes</a>
                                 </div>
                             </div>
@@ -37,9 +44,30 @@
     </section>
     <!-- Welcome Area End -->
 
-  
-
-
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Log Out</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Anda harus login dahulu jika ingin mengikuti event?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak jadi</button>
+        <form action="/signin">
+            @csrf
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal -->
 
 </body>
 

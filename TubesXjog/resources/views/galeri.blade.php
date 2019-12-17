@@ -9,6 +9,38 @@
         justify-content: flex-end;
 
     }
+
+    /* input[type="checkbox"] {
+	    position: absolute;
+	    top: -1000px;
+    } */
+
+    .like:checked {
+        content: "&#xf004;";
+    }
+
+    /* .like {
+        -webkit-appearance: none;
+	    background-color: #fafafa;
+	    border: 1px solid #cacece;
+	    box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
+        padding: 9px;
+        border-radius: 3px;
+        display: inline-block;
+        position: relative;
+
+    }
+
+    .like:active, .like:checked:active {
+	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
+    }
+
+    .like:checked {
+        background-color: #e9ecee;
+        border: 1px solid #adb8c0;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1);
+        color: #99a1a7;
+    } */
 </style>
 
 <!-- Breadcrumb Area Start -->
@@ -58,9 +90,11 @@
                         <div class="hover-content">
                             <p align="center">{{$p->title}}</p>
                             <!-- <a href="{{ url('/galeri_file/'.$p->photo) }}" class="portfolio-img">+</a> -->
+                            <!-- <p> Like</p> -->
                             @if(\Session::has('login'))
                                 <!-- {{$userLikes}} -->
                                 @if(empty($userLikes) || count($userLikes) == 0 || sizeof($userLikes) == 0)
+                                <!-- <i class="far fa-thumbs-up"></i> -->
                                 <input type="checkbox" data-id="{{$p->id}}" value="{{$p->id}}" class="like" name="like" id="like_{{$p->id}}">
                                 <!-- <p>kosong</p>  -->
                                 @else

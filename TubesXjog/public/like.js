@@ -1,37 +1,4 @@
-// $(document).ready(function() { 
-//     // console.log('hahahaha');
-//     $('#like').change(function(e) {
-//                 console.log('masuk ');
-//                 // var el = $(this);
-//     if($(this).is(":checked")) {
-//         $('#form-like').trigger('submit'); 
-//         $('#form-like').on("submit", function(ev) {
-//         ev.preventDefault();
-//         console.log('masuk');
-//         // var form = $(this);
-//         // var url = form.attr('action');
-//         var route = $('#form-like').data('route');
-//         var komen_like = $(this);
-            
-//         $.ajax({
-//             type: 'post',
-//             url: route,
-//             data: komen_like.serialize(),
-//             success: function(Response) {
-//                 console.log(Response);
-//                             // if(Response.success) {
-//                             //     $('#comment_field').val('');
-//                             // }
-                            
-//                     }
-//                 });
-//             });
-
-//         }
-//     });
-// });
-
-
+// ajax
 
 $(document).ready(function() {
     var butt = $('#butt');

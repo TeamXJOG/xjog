@@ -77,7 +77,7 @@ class pagesController extends Controller
         if(Session::get('role') == 'user') {
             return view('user/uploadphoto', ['event1' => $event1]);
         } else {
-            return redirect('/');
+            return redirect('/signin');
         }
         
     }
