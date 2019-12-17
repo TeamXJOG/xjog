@@ -59,19 +59,24 @@
                             <p align="center">{{$p->title}}</p>
                             <!-- <a href="{{ url('/galeri_file/'.$p->photo) }}" class="portfolio-img">+</a> -->
                             @if(\Session::has('login'))
-                                @if(empty($userLikes))
+                                <!-- {{$userLikes}} -->
+                                @if(empty($userLikes) || count($userLikes) == 0 || sizeof($userLikes) == 0)
                                 <input type="checkbox" data-id="{{$p->id}}" value="{{$p->id}}" class="like" name="like" id="like_{{$p->id}}">
+                                <!-- <p>kosong</p>  -->
                                 @else
                                     @php $check = false;  @endphp
                                         @foreach($userLikes as $ul)
                                             @if($ul->photo_id == $p->id)
                                                 @php $check = false;  @endphp
                                                 <input type="checkbox" data-id="{{$p->id}}" value="{{$p->id}}" class="like" name="like" id="like_{{$p->id}}" checked>
+                                                <!-- <p>ada</p> -->
+                                                @php break;  @endphp
                                             @else
                                                 @php  $check = true;  @endphp
                                             @endif
                                     @endforeach
                                             @if($check == true)
+                                            <!-- <p>gaada</p> -->
                                             <input type="checkbox" data-id="{{$p->id}}" value="{{$p->id}}" class="like" name="like" id="like_{{$p->id}}">
                                             @endif
                                    
