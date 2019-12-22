@@ -77,7 +77,7 @@
                                             @endif
                                             <li>
                                                 <!-- Button trigger modal -->
-                                                <a href="" data-toggle="modal" data-target="#staticBackdrop">
+                                                <a href="" data-toggle="modal" data-target="#staticBackdropMain">
                                                 Log Out
                                                 </a>
                                             </li>
@@ -117,7 +117,7 @@
 
 
 <!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade" id="staticBackdropMain" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
