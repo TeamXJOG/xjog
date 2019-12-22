@@ -6,6 +6,13 @@
                 alert('{{Session::get("notifpass")}}');
             </script>
         @endif
+<style>
+ #map {
+   width: 100%;
+   height: 400px;
+   background-color: grey;
+ }
+</style>
 
 <!-- Breadcrumb Area Start -->
 <section class="breadcrumb-area bg-img bg-overlay jarallax" style="background-image: url({{asset('Landing/alime/img/bg-img/yogya3.jpg')}});">
@@ -39,6 +46,8 @@
                         <p class="wow fadeInUp" data-wow-delay="300ms">{{$event->deskripsiObjekwisata}}</p>
                         <h3 class="wow fadeInUp" data-wow-delay="100ms">Lokasi :</h3>
                         <p class="wow fadeInUp" data-wow-delay="300ms">{{$event->lokasiObjekwisata}}</p>
+                        <a href="" data-toggle="modal" data-target="#staticBackdrop" class="btn alime-btn mb-3 mb-sm-0 mr-4">
+                                                Lihat Peta </a>
                         <h3 class="wow fadeInUp" data-wow-delay="100ms">Syarat dan Ketentuan :</h3>
                         <p class="wow fadeInUp" data-wow-delay="300ms">{{$event->syaratKetentuan}}</p>
                         <h3 class="wow fadeInUp" data-wow-delay="100ms">Batas Waktu :</h3>
@@ -59,5 +68,46 @@
     </div>
     <!-- About Us Area End -->
 
-    
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Log In Required</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="col-md-12" id="map"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak jadi</button>
+        <form action="/signin">
+            @csrf
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal -->
+
+<script>
+// Initialize and add the map
+function initMap() {
+  // The location of Uluru
+  var uluru = {lat: -25.344, lng: 131.036};
+  // The map, centered at Uluru
+  var map = new google.maps.Map(
+      document.getElementById('map'), {zoom: 4, center: uluru});
+  // The marker, positioned at Uluru
+  var marker = new google.maps.Marker({position: uluru, map: map});
+}
+    </script>
+
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+    </script>
+
 @endsection
