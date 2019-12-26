@@ -40,7 +40,7 @@
                         <p class="wow fadeInUp" data-wow-delay="300ms">{{$event->deskripsiObjekwisata}}</p>
                         <h3 class="wow fadeInUp" data-wow-delay="100ms">Lokasi :</h3>
                         <p class="wow fadeInUp" data-wow-delay="300ms">{{$event->lokasiObjekwisata}}</p>
-                        <a href="" data-toggle="modal" data-target="#staticBackdrop" class="btn alime-btn mb-3 mb-sm-0 mr-4">
+                        <a href="#" data-toggle="modal" data-target="#staticBackdrop" class="btn alime-btn btn-2 mt-30 wow fadeInUp">
                                                 Lihat Peta </a>
                         <h3 class="wow fadeInUp" data-wow-delay="100ms">Syarat dan Ketentuan :</h3>
                         <p class="wow fadeInUp" data-wow-delay="300ms">{{$event->syaratKetentuan}}</p>
