@@ -16,7 +16,7 @@
     <title>@yield('title')</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="">
+    <link rel="icon" href="">3
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="{{asset('Landing/alime/style.css')}}">

@@ -6,13 +6,7 @@
                 alert('{{Session::get("notifpass")}}');
             </script>
         @endif
-<style>
- #map {
-   width: 100%;
-   height: 400px;
-   background-color: grey;
- }
-</style>
+
 
 <!-- Breadcrumb Area Start -->
 <section class="breadcrumb-area bg-img bg-overlay jarallax" style="background-image: url({{asset('Landing/alime/img/bg-img/yogya3.jpg')}});">
@@ -70,44 +64,41 @@
 
 <!-- Modal -->
 <div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+  <div class="modal-dialog modal-xl" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Log In Required</h5>
+        <h5 class="modal-title" id="staticBackdropLabel">Lokasi</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <div class="col-md-12" id="map"></div>
+                    @php
+                        $lokasi = $event->namaObjekwisata;
+                        $temp = trim($lokasi); //menghapus spasi di awal dan akhir kalimat
+                        $setLokasi = str_replace(' ','%20', $temp); // kode untuk mengganti spasi ditengah kalimat
+                        $codeLokasi = 'src="https://maps.google.com/maps?q='.$setLokasi.'&t=&z=13&ie=UTF8&iwloc=&output=embed"';
+                    @endphp
+                    <div class="mapouter">
+                        <div class="gmap_canvas"><iframe width="1109" height="400" id="gmap_canvas" <?php echo $codeLokasi ?> 
+                            frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>Google Maps Generator by 
+                            <a href="https://www.embedgooglemap.net">embedgooglemap.net</a>
+                        </div>
+                    <style>
+                        .mapouter{position:relative;align: center;text-align:right;height:400px;width:1109px;}
+                        .gmap_canvas {overflow:hidden;background:none!important;height:400px;width:1109px;}
+                    </style>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak jadi</button>
-        <form action="/signin">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+        <!-- <form action="/signin">
             @csrf
             <button type="submit" class="btn btn-primary">Login</button>
-        </form>
+        </form> -->
       </div>
     </div>
   </div>
 </div>
 <!-- Modal -->
-
-<script>
-// Initialize and add the map
-function initMap() {
-  // The location of Uluru
-  var uluru = {lat: -25.344, lng: 131.036};
-  // The map, centered at Uluru
-  var map = new google.maps.Map(
-      document.getElementById('map'), {zoom: 4, center: uluru});
-  // The marker, positioned at Uluru
-  var marker = new google.maps.Marker({position: uluru, map: map});
-}
-    </script>
-
-<script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
-    </script>
 
 @endsection
