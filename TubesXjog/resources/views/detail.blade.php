@@ -48,7 +48,15 @@
                         <p class="wow fadeInUp" data-wow-delay="300ms">{{$event->tanggalMulai}} s/d {{$event->tanggalSelesai}} </p>
 
                         <!-- <p class="wow fadeInUp" data-wow-delay="400ms">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et do sunt explicabo. Nemo enim ipsam et dolore magnam aliquam quaerat voluptatem.</p> -->
-                        <a class="btn alime-btn btn-2 mt-30 wow fadeInUp" data-wow-delay="500ms" href="/uploadp/{{$event->id}}">Ikut Kontes</a>
+                        <!-- <a class="btn alime-btn btn-2 mt-30 wow fadeInUp" data-wow-delay="500ms" href="/uploadp/{{$event->id}}">Ikut Kontes</a> -->
+                        @if(\Session::get('role') == 'user')
+                                    <a href="/uploadp/{{$event->id}}" class="btn alime-btn mb-3 mb-sm-0 mr-4" >Ikut Kontes</a>
+                                    @else
+                                    <!-- Button trigger modal -->
+                                    <a href="" data-toggle="modal" data-target="#staticBackdrop" class="btn alime-btn mb-3 mb-sm-0 mr-4">
+                                                Ikut Kontes
+                                                </a>
+                                    @endif   
                     </div>
                 </div>
                 <div class="col-10 col-lg-6">
@@ -95,6 +103,30 @@
             @csrf
             <button type="submit" class="btn btn-primary">Login</button>
         </form> -->
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal -->
+<!-- Modal -->
+<div class="modal fade" id="staticBackdropauth" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Log In Required</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Anda harus login dahulu jika ingin mengikuti event?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak jadi</button>
+        <form action="/signin">
+            @csrf
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
       </div>
     </div>
   </div>
