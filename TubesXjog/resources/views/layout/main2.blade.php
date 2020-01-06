@@ -63,9 +63,9 @@
                                 <ul id="nav">
                                     <li><a href="{{ url('/')}}">Home</a></li>
                                     <li><a href="{{ url('/galeri')}}">Gallery</a></li>
-                                    @if(\Session::get('role') == 'admin')
+                                    <!-- @if(\Session::get('role') == 'admin')
                                     <li><a href="{{ url('/galeri')}}">Submission</a></li>
-                                    @endif
+                                    @endif -->
                                     <li><a href="{{ url('/about')}}">About</a></li>
                                     @if(\Session::get('role') == 'admin')
                                     <li><a href="{{ url('/dashboard')}}">Admin Dashboard</a></li>
