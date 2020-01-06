@@ -50,7 +50,8 @@ class pagesController extends Controller
 
     public function editprofile() {
         if(Session::get('role') == 'user') {
-            return view('user/profile');
+            $photo = photo::where('user_id', Session::get('id'))->get();
+            return view('user/profile', ['photo' => $photo]);
         }else {
             return redirect('/');
         }

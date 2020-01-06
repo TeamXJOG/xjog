@@ -27,7 +27,7 @@
                                     <a href="/uploadp/{{$e->id}}" class="btn alime-btn mb-3 mb-sm-0 mr-4" >Ikut Kontes</a>
                                     @else
                                     <!-- Button trigger modal -->
-                                    <a href="" data-toggle="modal" data-target="#staticBackdrop" class="btn alime-btn mb-3 mb-sm-0 mr-4">
+                                    <a href="" data-toggle="modal" data-target="#staticBackdropBeranda" class="btn alime-btn mb-3 mb-sm-0 mr-4">
                                                 Ikut Kontes
                                                 </a>
                                     @endif            
@@ -45,7 +45,7 @@
     <!-- Welcome Area End -->
 
 <!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade" id="staticBackdropBeranda" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
